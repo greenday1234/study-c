@@ -7,7 +7,7 @@ int main()
 	int year[12][8] = { 0 };
 	int count=0;
 	int yearsum=0;
-	int av=0;
+	double av=0;
 	int monthsum=0;
 	int y=2000;
 	if (fp == NULL)
@@ -44,8 +44,8 @@ int main()
 		{
 			monthsum+=year[i][j];
 		}
-		av=monthsum/count; 
-		printf(" %d |", av);
+		av=(double) monthsum/8; 
+		printf(" %0.lf |", av);
 			av=0;
 			monthsum=0;
 	}
