@@ -3,7 +3,7 @@
 #define MAX_DEGREE 101  //배열의 값을 101로 지정
 typedef struct{
     int degree; //차수
-    float coef[MAX_DEGREE]; //계수
+    float coef[MAX_DEGREE]; //계수(float형인 이유는 계수가 정수일지 실수일지 알 수 없기 때문)
 }polynomial;
 polynomial poly_add1(polynomial A, polynomial B)
 {
@@ -15,7 +15,7 @@ polynomial poly_add1(polynomial A, polynomial B)
 
     while(Apos <= A.degree && Bpos <= B.degree){
         if(degree_a > degree_b){    //a차수가 b차수보다 클 때
-            C.coef[Cpos++] = A.coef[Apos++];    //c의 계수부분에 a의 계수를 넣는다.
+            C.coef[Cpos++] = A.coef[Apos++];    //c의 계수에 a의 계수를 넣는다.
             degree_a--; //a의 차수 감소
         }
         else if (degree_a == degree_b){ //a의 차수와 b의 차수가 같을 때
@@ -35,9 +35,9 @@ print_poly(polynomial p){   //출력함수
     printf("%3.lf \n", p.coef[p.degree]);
 }
 int main(){
-    polynomial a = {5,{3,6,0,0,0,10}};
-    polynomial b = {5,{3,7,0,5,0,1}};
-    polynomial c;
+    polynomial a = {5,{10,0,0,0,6,3}};
+    polynomial b = {4,{7,0,5,0,1}};
+    polynomial c;   //a+b
     print_poly(a);  //a구조체 출력
     print_poly(b);  //b구조체 출력
     c = poly_add1(a,b); //
