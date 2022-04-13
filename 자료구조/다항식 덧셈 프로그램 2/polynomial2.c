@@ -22,7 +22,7 @@ attach(float coef, int expon){  //새로운 항을 다항식에 추가하는 함
         exit(1);
     }
     terms[avail].coef = coef;   //계수를 놓는 빈칸에 계수를 넣는다.
-    terms[avail].expon = expon; //차수를 놓는 빈칸에 차수를 넣는다,
+    terms[avail].expon = expon; //차수를 놓는 빈칸에 차수를 넣는다.
     avail++;    //빈칸을 다음 칸으로 옮긴다.
 }
 poly_add2(int As, int Ae, int Bs, int Be, int *Cs, int *Ce){    //다항식의 덧셈 함수
@@ -35,17 +35,17 @@ poly_add2(int As, int Ae, int Bs, int Be, int *Cs, int *Ce){    //다항식의 �
         As++;   //첫 번째 항에서 다음 항으로 옮긴다.
         case '=':
         tempcoef = terms[As].coef + terms[Bs].coef; //a항과 b항의 계수를 더한다.
-        if(tempcoef)
+        if(tempcoef)    //더한 값이 0이 아닐 때
         attach(tempcoef, terms[As].expon);  //더한 값을 빈칸에 넣고, 차수도 넣어준다.
         As++;Bs++;break;    //a항과 b항을 다음으로 넘긴다.
         case '<':
         attach(terms[Bs].coef, terms[Bs].expon);    //b항을 빈칸에 넣는다.
         Bs++; break;    //b항을 증가시킨다.
     }
-    for(;As<=Ae;As++)   //a의 첫째 항 부터 증가시켜 마지막 항까지 반복한다.
-    attach(terms[As].coef, terms[As].expon);    //a항을 빈칸에 넣어준다.
-    for(;Bs<=Be;Bs++)   //b의 첫째항부터 증가시켜 마지막 항까지 반복한다.
-    attach(terms[Bs].coef, terms[Bs].expon);    //b항을 빈칼에 넣어준다.
+    for(;As<=Ae;As++)
+    attach(terms[As].coef, terms[As].expon);
+    for(;Bs<=Be;Bs++)
+    attach(terms[Bs].coef, terms[Bs].expon);
     *Ce = avail - 1;    //c의 마지막 항을 빈칸-1로 잡아준다.(배열이기 때문)
 }
 print_poly(int s, int e){   //출력 함수
