@@ -33,6 +33,7 @@ poly_add2(int As, int Ae, int Bs, int Be, int *Cs, int *Ce){    //다항식의 �
         case '>':   
         attach(terms[As].coef, terms[As].expon);    //a항의 차수와 계수를 빈칸에 옮긴다.
         As++;   //첫 번째 항에서 다음 항으로 옮긴다.
+        break;
         case '=':
         tempcoef = terms[As].coef + terms[Bs].coef; //a항과 b항의 계수를 더한다.
         if(tempcoef)    //더한 값이 0이 아닐 때
