@@ -74,7 +74,7 @@ int main(){
     enqueue(&queue, second);
     queue_print(&queue);
 
-    for(int i=0;i<40;i++){
+    for(int i=0;i<50;i++){
         int num;
         num = math(first, second);
         if(i%2 != 0 && i != 0){
