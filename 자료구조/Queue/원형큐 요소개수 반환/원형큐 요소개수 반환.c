@@ -47,21 +47,25 @@ void enqueue(QueueType *q, element item){   //삽입
     q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;   //rear를 1증가시킨다
     q->data[q->rear] = item;    //증가시킨 rear에 item을 넣는다
 }
+
 element dequeue(QueueType *q){  //삭제
     if(is_empty(q))
     error("큐가 공백상태입니다.");
     q->front = (q->front + 1) % MAX_QUEUE_SIZE; //front를 1 증가시킨다
     return q->data[q->front];   //증가된 front를 return한다
 }
+
 element peek(QueueType *q){ //삭제
     if(is_empty(q))
     error("큐가 공백상태입니다.");
     return q->data[(q->front + 1) % MAX_QUEUE_SIZE];
 }
+
 int get_count(QueueType *q){
-    int count;
-    count = q->rear - q->front;
-    return count;
+    if(q->rear >= q->front)
+    return q->rear - q->front;
+    else
+    return MAX_QUEUE_SIZE - (q->front - q->rear);
 }
 
 int main(){

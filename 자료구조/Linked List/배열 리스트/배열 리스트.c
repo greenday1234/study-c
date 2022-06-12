@@ -4,7 +4,6 @@
 #define MAX_LIST_SIZE 100
 
 typedef int element;
-
 typedef struct{
     element array[MAX_LIST_SIZE];
     int size;
@@ -27,10 +26,10 @@ int is_full(ArrayListType *L){
     return L->size == MAX_LIST_SIZE;
 }
 
-element get_entry(ArrayListType *L, int pos){   //해당 pos의 index값 불러오기
-    if(pos < 0 || pos >= L->size)
+element get_entry(ArrayListType *L, int pos){   //해당 pos의 data값 뽑아오기
+    if(pos < 0 || pos >= L->size)   //pos가 정상 범위가 아니면 에러
     error("위치 오류");
-    return L->array[pos];
+    return L->array[pos];   //pos위치의 array값 반환
 }
 
 void print_list(ArrayListType *L){

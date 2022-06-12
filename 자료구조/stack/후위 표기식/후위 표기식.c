@@ -56,7 +56,6 @@ int prec(char op){  //연산자 우선순위 반환
         return 1;
         case '*':
         case '/':
-        case '%':
         return 2;
     }
     return -1;
@@ -72,14 +71,14 @@ void infix_to_postfix(char exp[]){  //중위 표기식 -> 후위 표기식
     for(i=0;i<len;i++){
         ch = exp[i];
         switch(ch){
-            case '+':
+            case '+':   //연산자인 경우
             case '-':
             case '*':
             case '/':
-            case '%':
-            while(!is_empty(&s) && (prec(ch) <= prec(peek(&s))))    //스택에 있는 연산자 우선순위가 더 크거나 같으면 출력
-            printf("%c", pop(&s));
-            push(&s, ch);       //연산자 우선순위가 낮으면 push
+            while(!is_empty(&s) && (prec(ch) <= prec(peek(&s)))) {   //스택에 있는 연산자 우선순위가 더 크거나 같으면 출력
+            printf("%c", pop(&s));  //계속 비교해서 스택에 쌓인 연산자 비교
+            }
+            push(&s, ch);      //연산자 우선순위가 낮으면 push
             break;
             case '(':   //왼쪽 괄호는 무조건 push
             push(&s, ch);
@@ -101,7 +100,7 @@ void infix_to_postfix(char exp[]){  //중위 표기식 -> 후위 표기식
 }
 
 int main(){
-    char *s = "5*(1+2)%2";
+    char *s = "5*(1+2)/2";
     printf("중위 표기식 %s \n", s);
     printf("후위 표기식 ");
     infix_to_postfix(s);

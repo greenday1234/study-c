@@ -66,22 +66,22 @@ int math(int a, int b){
 
 int main(){
     int first = 0, second = 1;
+
     QueueType queue;
-    int element;
     init_queue(&queue);
 
     enqueue(&queue, first);
     enqueue(&queue, second);
     queue_print(&queue);
-
-    for(int i=0;i<50;i++){
+int element;
+    for(int i=0;i<30;i++){
         int num;
         num = math(first, second);
-        if(i%2 != 0 && i != 0){
-          second = num;
+        if(i%2 != 0 && i != 0){ //i가 짝수가 아니고 0이 아닌 경우
+          second = num; //계산한 값을 second에 삽입
         }
-        else{
-            first = num;
+        else{   //i가 홀수인 경우
+            first = num;    //계산한 값을 first에 삽입
         }
         enqueue(&queue, num);
        element = dequeue(&queue);

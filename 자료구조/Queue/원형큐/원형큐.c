@@ -4,7 +4,7 @@
 #define MAX_QUEUE_SIZE 5
 
 typedef int element;
-typedef struct {    //원형큐 구조체
+typedef struct {    //원형큐 구조체(선형큐와 같음)
     element data[MAX_QUEUE_SIZE];
     int front, rear;
 }QueueType;
@@ -24,7 +24,27 @@ int is_empty(QueueType *q){ //공백
 }
 
 int is_full(QueueType *q){  //포화
-    return ((q->rear + 1) % MAX_QUEUE_SIZE == q->front);    //rear + 1을 전체 크기로 나눈 나머지가 front와 같으면 포화
+    return ( q->front == (q->rear + 1) % MAX_QUEUE_SIZE);    //rear + 1을 전체 크기로 나눈 나머지가 front와 같으면 포화
+}
+
+void enqueue(QueueType *q, element item){   //삽입
+    if(is_full(q))
+        error("큐가 포화상태입니다.");
+    q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;   //rear를 1증가시킨다
+    q->data[q->rear] = item;    //증가시킨 rear에 item을 넣는다
+}
+
+element dequeue(QueueType *q){  //삭제
+    if(is_empty(q))
+        error("큐가 공백상태입니다.");
+    q->front = (q->front + 1) % MAX_QUEUE_SIZE; //front를 1 증가시킨다
+    return q->data[q->front];   //증가된 front를 return한다
+}
+
+element peek(QueueType *q){ //삭제
+    if(is_empty(q))
+        error("큐가 공백상태입니다.");
+    return q->data[(q->front + 1) % MAX_QUEUE_SIZE];
 }
 
 void queue_print(QueueType *q){ //원형큐 출력
@@ -40,25 +60,6 @@ void queue_print(QueueType *q){ //원형큐 출력
     }
     printf("\n");
 }
-
-void enqueue(QueueType *q, element item){   //삽입
-    if(is_full(q))
-    error("큐가 포화상태입니다.");
-    q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;   //rear를 1증가시킨다
-    q->data[q->rear] = item;    //증가시킨 rear에 item을 넣는다
-}
-element dequeue(QueueType *q){  //삭제
-    if(is_empty(q))
-    error("큐가 공백상태입니다.");
-    q->front = (q->front + 1) % MAX_QUEUE_SIZE; //front를 1 증가시킨다
-    return q->data[q->front];   //증가된 front를 return한다
-}
-element peek(QueueType *q){ //삭제
-    if(is_empty(q))
-    error("큐가 공백상태입니다.");
-    return q->data[(q->front + 1) % MAX_QUEUE_SIZE];
-}
-
 int main(){
     QueueType queue;
     element element;

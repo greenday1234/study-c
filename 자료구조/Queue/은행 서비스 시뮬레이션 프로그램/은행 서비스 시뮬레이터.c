@@ -66,17 +66,19 @@ element peek(QueueType *q){ //삭제
 
 int main(){
     int minutes = 60;
-    int total_wait = 0;
-    int total_customers = 0;
-    int service_time = 0;
-    int service_customer;
+    int total_wait = 0; //전체 대기시간 
+    int total_customers = 0;    //전체 고객
+    int service_time = 0;   //업무 시간
+    int service_customer;   //서비스 사용중 고객
+
     QueueType queue;
     init_queue(&queue);
 
     srand(time(NULL));
+
     for(int clock = 0;clock<minutes;clock++){   //0부터 시작해 60까지 반복
         printf("현재시각=%d\n", clock); 
-        if((rand()%10) < 3){    //0에서 10 사이의 난수를 발생시키고 3 이내면 고객으로 판단(임의)
+        if((rand()%10) < 3){    //0에서 10 사이의 난수를 발생시키고 3 이내면 고객으로 판단(1/3의 확률)
             element customer;   //고객 구조체 생성
             customer.id = total_customers++;    //고객 id(들어온 고객 수) 1증가시켜 적용
             customer.arrival_time = clock;  //고객이 들어온 시간

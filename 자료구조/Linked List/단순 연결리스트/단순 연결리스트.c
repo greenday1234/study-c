@@ -59,6 +59,7 @@ int main(){
         head = insert_first(head,i);
         print_list(head);
     }
+
     for(int i=0;i<5;i++){
         head = dalete_first(head);
         print_list(head);

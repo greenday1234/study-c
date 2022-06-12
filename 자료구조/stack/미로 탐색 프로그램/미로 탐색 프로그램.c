@@ -51,7 +51,7 @@ element peek(StackType *s) {
 	return s->data[s->top];
 }
 
-element here = {1,0}, entry = {1,0};
+element here = {1,0};
 
 char maze[MAZE_SIZE][MAZE_SIZE] = {
     {'1','1','1','1','1','1'},
@@ -63,20 +63,20 @@ char maze[MAZE_SIZE][MAZE_SIZE] = {
 };
 
 void push_loc(StackType *s, int r, int c){  //위치를 스택에 삽입
-    if(r<0 || c<0)
+    if(r<0 || c<0)  //현재 위치가 미로 안에 없을 경우
     return;
-    if(maze[r][c] != '1' && maze[r][c] != '.'){
+    if(maze[r][c] != '1' && maze[r][c] != '.'){ //벽이나 왔던 길이 아닌 경우(갈 수 있는 길)
         element tmp;
         tmp.r = r;
         tmp.c = c;
-        push(s,tmp);
+        push(s,tmp);    //갈 수 있는 길을 스택에 push
     }
 }
 
 void maze_print(char maze[MAZE_SIZE][MAZE_SIZE]){   //미로 출력
     printf("\n");
-    for(int r=0;r<MAZE_SIZE;r++){
-        for(int c = 0;c<MAZE_SIZE;c++){
+    for(int r=0;r<MAZE_SIZE;r++){   //행
+        for(int c = 0;c<MAZE_SIZE;c++){ //열
             printf("%c", maze[r][c]);
         }
         printf("\n");
@@ -87,23 +87,24 @@ int main(){
     int r,c;
     StackType s;
     init_stack(&s);
-    here = entry;
-    while(maze[here.r][here.c] != 'x'){
-        r = here.r;
-        c = here.c;
-        maze[r][c] = '.';
-        maze_print(maze);
-        push_loc(&s, r-1,c);
-        push_loc(&s, r+1,c);
-        push_loc(&s, r,c-1);
-        push_loc(&s, r,c+1);
 
-        if(is_empty(&s)){
+    while(maze[here.r][here.c] != 'x'){ //도착지점에 도착할 떄까지 반복
+        r = here.r; //행
+        c = here.c; //열
+        maze[r][c] = '.';   //현재 위치를 .으로 변경
+        maze_print(maze);
+        //갈 수 있는 길을 스택에 push
+        push_loc(&s, r-1,c);    //왼쪽으로 가기 
+        push_loc(&s, r+1,c);    //오른쪽으로 가기
+        push_loc(&s, r,c-1);    //아래로 가기
+        push_loc(&s, r,c+1);    //위로 가기
+
+        if(is_empty(&s)){   //도착지점에 도착하기 전에 스택이 빌 경우
             printf("실패\n");
             exit(1);
         }
         else
-        here = pop(&s);
+            here = pop(&s);
     }
     printf("성공\n");
     return 0;

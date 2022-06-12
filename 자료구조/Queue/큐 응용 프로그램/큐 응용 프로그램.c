@@ -67,12 +67,13 @@ int main(){
     init_queue(&queue);
    
     for(int i=0;i<100;i++){
-        if(rand() % 5 == 0){
-            enqueue(&queue, rand()%100);
+        if(rand() % 5 == 0){    //랜덤수가 5로 나누어 떨어지는 경우
+            enqueue(&queue, rand()%100);    //0~100사이의 랜덤수를 큐에 삽입
         }
         queue_print(&queue);
-        if(rand() % 10 == 0){
-            int data = dequeue(&queue);
+
+        if(rand() % 10 == 0){   //랜덤수가 10으로 나누어 떨어지는 경우
+            int data = dequeue(&queue); //front에서 data를 뽑기
         }
         queue_print(&queue);
     }

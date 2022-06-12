@@ -66,9 +66,10 @@ element delete_rear(DequeType *q){  //맨 뒤 삭제
 }  
 int main(){
     int item = 0;
-    DequeType q;
 
+    DequeType q;
     init_queue(&q);
+
     char ch[20];
     printf("문자열을 입력하시오: ");
     scanf("%s", ch);
@@ -76,15 +77,15 @@ int main(){
     char front_ch, rear_ch;
     int count=0;
     int len = strlen(ch);
-    for(int i=0; i<len;i++){
+    for(int i=0; i<len;i++){    //덱에 문자열 추가(문자단위)
         c = ch[i];
         enqueue(&q, c);
         count++;
     }
-    for(int i=0;i<count/2;i++){
-        front_ch = dequeue(&q);
-        rear_ch = delete_rear(&q);
-        if(front_ch != rear_ch){
+    for(int i=0;i<count/2;i++){ //양 끝에서 꺼내므로 전체 길이의 절반만 반복
+        front_ch = dequeue(&q); //front에서 꺼내기
+        rear_ch = delete_rear(&q);  //rear에서 꺼내기
+        if(front_ch != rear_ch){    //양쪽에서 꺼낸 두 문자가 같지 않을 경우
             printf("회문이 아닙니다.\n");
             exit(1);
         }
