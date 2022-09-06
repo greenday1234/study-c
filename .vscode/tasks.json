@@ -23,12 +23,37 @@
 		},
 		{
 			"type": "shell",
-			"label":"Run C source code",
-			"command":"./${fileBasenameNoExtension}",
+			"label": "Run C/C++ source code",
+			"command": "./${fileBasenameNoExtension}",
 			"options": {
-				"cwd":"${fileDirname}"
+				"cwd": "${fileDirname}"
 			},
-			"group":"test"
+			"group": "test"
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: clang++ 활성 파일 빌드",
+			"command": "/usr/bin/clang++",
+			"args": [
+				"-std=c++17",
+				"-fcolor-diagnostics",
+				"-fansi-escape-codes",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "컴파일러: /usr/bin/clang++"
 		}
 	]
 }
