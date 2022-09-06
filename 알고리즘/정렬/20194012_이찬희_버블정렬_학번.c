@@ -48,7 +48,7 @@ void print_list(ListType* head) {
 void BubbleSort(ListType* head) {
 	ListNode* p, * q, * r;
 	if (head->size == 1)
-		return head;
+		exit(1);
 	for (int i=0; i<head->size; i++) {
 		p = head->head, q = head->head, r = NULL;
 		for (p = p->link; p != NULL; p = p->link) {
@@ -96,7 +96,7 @@ int main() {
 	fp = fopen("data.txt", "r");
 	if (fp == NULL) {
 		fprintf(stderr, "err");
-		exit(1);
+		return 0;
 	}
 	
 	while (!feof(fp)) {
