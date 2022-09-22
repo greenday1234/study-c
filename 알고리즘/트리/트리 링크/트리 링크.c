@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <memory.h>
 
 typedef struct TreeNode {
 	int data;
@@ -7,6 +8,9 @@ typedef struct TreeNode {
 	struct TreeNode* right;
 }TreeNode;
 
+//     n1
+//	  / |
+//	 n2 n3
 
 int main() {
 	TreeNode *n1 = (TreeNode*)malloc(sizeof(TreeNode));
@@ -23,5 +27,6 @@ int main() {
 	n3->right = NULL;
 
 	printf("%d %d %d", n1->data, n1->left->data, n3->data);
+	free(n1), free(n2), free(n3);
 	return 0;
 }
