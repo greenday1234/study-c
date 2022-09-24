@@ -2,5 +2,15 @@
     "files.encoding": "utf8",
     "files.autoGuessEncoding": true,
     "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
-    "eslint.workingDirectories": [ {"mode": "auto"} ],
+    "eslint.workingDirectories": [
+        {
+            "mode": "auto"
+        }
+    ],
+    "files.associations": {
+        "__bit_reference": "cpp",
+        "array": "cpp",
+        "ios": "cpp",
+        "algorithm": "cpp"
+    },
 }
