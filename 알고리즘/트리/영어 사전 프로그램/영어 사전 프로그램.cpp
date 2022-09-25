@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <memory.h>
-
 #define MAX_WORD_SIZE 100
 #define MAX_MEANING_SIZE 100
 
@@ -124,11 +123,9 @@ void delete_node(TreeNode** root, element key) {
 	free(t);
 }
 
-
-
 TreeNode* search(TreeNode* root, element key) {
 	TreeNode* p = root;
-
+	printf("%s %s", key.word, p->key.word);
 	while (p != NULL) {
 		switch (compare(key, p->key)) {
 		case -1:
@@ -166,7 +163,6 @@ int main() {
 	}
 	while (!feof(fp)) {
 		fscanf(fp, "%c", &ch);
-		
 		switch (ch) {
 		case 'i':
 			fscanf(fp, "%s %s", e.word, e.meaning);
