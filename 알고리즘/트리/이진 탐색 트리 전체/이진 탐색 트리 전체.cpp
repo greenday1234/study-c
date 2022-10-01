@@ -154,6 +154,15 @@ void inorder(TreeNode* root){
     }
 }
 
+void print_node(TreeNode* p, int th){
+    if( p != NULL){
+        if(p->key < th)
+        printf("%d보다 작은 노드 : %d\n", th, p->key);
+        print_node(p->left, th);
+        print_node(p->right, th);
+    }
+}
+
 int main(){
     TreeNode* root = NULL;
     TreeNode* tmp = NULL;
@@ -172,6 +181,11 @@ int main(){
     printf("이진 탐색 트리에서 30을 발견함\n");
     else
     printf("이진 탐색 트리에서 30을 발견못함.\n");
+
+    int value;
+    printf("값을 입력하시오: ");
+    scanf("%d", &value);
+    print_node(root, value);
     return 0;
 
 }
