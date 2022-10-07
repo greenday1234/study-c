@@ -33,14 +33,14 @@ int is_full(QueueType *q){
 
 void enqueue(QueueType *q, element item){
     if(is_full(q))
-    error("큐가 포화상태입니다.");
+    error("full");
     q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;
     q->data[q->rear] = item;
 }
 
 element dequeue(QueueType *q){
     if(is_full(q))
-    error("큐가 공백상태입니다.");
+    error("empty");
     q->front = (q->front + 1) % MAX_QUEUE_SIZE;
     return q->data[q->front];
 }
