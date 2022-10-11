@@ -58,7 +58,7 @@ void heap_sort(element a[], int n){
     for(i=0; i<n;i++){
         insert_max_heap(h, a[i]);
     }
-    for(i = (n-1); i>=0; i--){
+    for(i = n-1; i>=0; i--){
         a[i] = delete_max_heap(h);
     }
     free(h);
