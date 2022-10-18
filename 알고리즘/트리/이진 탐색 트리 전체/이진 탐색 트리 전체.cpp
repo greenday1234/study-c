@@ -163,6 +163,23 @@ void print_node(TreeNode* p, int th){
     }
 }
 
+int sum_node(TreeNode* node){
+    if(node == NULL)
+    return 0;
+    return node->key + sum_node(node->left) + sum_node(node->right);
+}
+
+int get_half_leaf_count(TreeNode* node){
+    int count = 0;
+    if(node != NULL){
+        if((node->left == NULL && node->right != NULL) || (node->left != NULL && node->right == NULL))
+        return 1;
+    }
+    else
+        count = get_half_leaf_count(node->left) + get_half_leaf_count(node->right);
+    return count;
+}
+
 int main(){
     TreeNode* root = NULL;
     TreeNode* tmp = NULL;
@@ -181,11 +198,15 @@ int main(){
     printf("이진 탐색 트리에서 30을 발견함\n");
     else
     printf("이진 탐색 트리에서 30을 발견못함.\n");
-
+    
+    printf("노드의 합은 %d입니다.\n", sum_node(root));
+    
     int value;
     printf("값을 입력하시오: ");
     scanf("%d", &value);
     print_node(root, value);
-    return 0;
 
+    printf("자식이 하나만 있는 노드 개수 : %d\n", get_half_leaf_count(root));
+    
+    return 0;
 }
