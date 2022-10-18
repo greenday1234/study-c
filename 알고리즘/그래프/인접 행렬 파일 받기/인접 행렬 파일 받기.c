@@ -65,5 +65,6 @@ int main(){
         }
     }
     print_adj_mat(g);
+    fclose(fp);
     return 0;
 }
