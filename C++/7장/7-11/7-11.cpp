@@ -6,14 +6,14 @@ class Stack{
     int size;
     public:
     Stack(){num = new int [10]; size = -1;}
-    Stack& operator <<(int x);
+    friend Stack& operator <<(Stack& s, int x);
     bool operator !();
     void operator >>(int& x);
 };
 
-Stack& Stack::operator <<(int x){
-    num[++size] = x;
-    return *this;
+Stack& operator <<(Stack& s, int x){ //클래스 멤버함수도 가능
+    s.num[++s.size] = x;
+    return s;
 }
 
 bool Stack::operator !(){
