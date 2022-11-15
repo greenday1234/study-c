@@ -32,7 +32,7 @@ void prim(int s, int n) {
 
 	//	초기화
 	//	dist[] selected[]
-	//	dist[] 시작노드값만 0이고 나머지는 전무 INF
+	//	dist[] 시작노드값만 0이고 나머지는 전부 INF
 	//	selected[]는 전부 INF
 	for (u = 0; u < n; u++) {
 		dist[u] = INF;
