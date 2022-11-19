@@ -11,7 +11,7 @@ typedef struct GraphType{
     int weight[MAX_VERTICES][MAX_VERTICES];
 }GraphType;
 
-int A[MAX_VERTICES][MAX_VERTICES];
+int A[MAX_VERTICES][MAX_VERTICES];  //가장 작은 경로 값으로 업데이트 하는 배열
 
 void printA(GraphType *g){
     int i, j;
@@ -32,15 +32,15 @@ void floyd(GraphType *g){
     int i, j, k;
     for(i = 0; i< g->n; i++)
     for(j = 0; j<g->n; j++)
-    A[i][j] = g->weight[i][j];
-    printA(g);
+    A[i][j] = g->weight[i][j];  //업데이트 배열 A 초기화
+    printA(g);  //초기 배열 출력
 
     for(k = 0;k<g->n;k++){
         for(i=0;i<g->n;i++)
         for(j=0;j<g->n;j++)
-        if(A[i][k] + A[k][j] < A[i][j])
-        A[i][j] = A[i][k] + A[k][j];
-        printA(g);
+        if(A[i][k] + A[k][j] < A[i][j]) //새로 찾은 경로가 원래의 경로보다 작은 경우
+        A[i][j] = A[i][k] + A[k][j];    //경로 업데이트
+        printA(g);  //업데이트 한 배열 출력
     }
 }
 
