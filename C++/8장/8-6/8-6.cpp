@@ -15,36 +15,15 @@ protected:
 	int getCapacity() { return capacity; }
 };
 
-class MyStack : public BaseArray {
-	int top;
-public:
-	MyStack(int a);
-	void push(int n);
-	int capacity();
-	int length();
-	int pop();
+class MyStack : public BaseArray{
+	int top=0;
+	public:
+	MyStack(int size) : BaseArray(size){}
+	void push(int n){put(top, n); top++;}
+	int capacity(){return getCapacity();}
+	int length(){return top;}
+	int pop(){return get(--top);}
 };
-
-MyStack::MyStack(int a) : BaseArray(a) {
-	top = 0;
-}
-
-void MyStack::push(int n) {
-	put(top, n);
-	top++;
-}
-
-int MyStack::capacity() {
-	return getCapacity();
-}
-
-int MyStack::length() {
-	return top;
-}
-
-int MyStack::pop() {
-	return get(--top);
-}
 
 int main() {
 	MyStack mStack(100);

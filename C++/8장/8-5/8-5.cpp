@@ -15,36 +15,16 @@ protected:
 	int getCapacity() { return capacity; }
 };
 
-class MyQueue : public BaseArray {
-	int start, end;
-public:
-	MyQueue(int a);
-	void enqueue(int n);
-	int capacity();
-	int length();
-	int dequeue();
+class MyQueue : public BaseArray{
+	int start = 0;
+	int end = 0;
+	public:
+	MyQueue(int size) : BaseArray(size){}
+	void enqueue(int n){put(end, n); end++;}
+	int dequeue(){return get(start++);}
+	int capacity(){return getCapacity();}
+	int length(){return end-start;}
 };
-
-MyQueue::MyQueue(int a) : BaseArray(a) {
-	start = 0, end = 0;
-}
-
-void MyQueue::enqueue(int n) {
-	put(end, n);
-	end++;
-}
-
-int MyQueue::capacity() {
-	return getCapacity();
-}
-
-int MyQueue::length() {
-	return end-start;
-}
-
-int MyQueue::dequeue() {
-	return get(start++);
-}
 
 int main() {
 	MyQueue mQ(100);

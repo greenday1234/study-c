@@ -11,19 +11,14 @@ public:
 	double getArea() { return 3.14 * radius * radius; };
 };
 
-class NamedCircle : public Circle {
+class NamedCircle : public Circle{
 	string name;
-public:
-	NamedCircle(int a, string str);
+	public:
+	NamedCircle(int radius, string name):Circle(radius){this->name = name;}
 	void show();
 };
 
-NamedCircle::NamedCircle(int a, string str) {
-	setRadius(a);
-	this->name = str;
-}
-
-void NamedCircle::show() {
+void NamedCircle::show(){
 	cout << "반지름이 " << getRadius() << "인 " << name << endl;
 }
 

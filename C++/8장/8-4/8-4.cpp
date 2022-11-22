@@ -14,28 +14,19 @@ protected:
 	void move(int x, int y) { this->x = x; this->y = y; }
 };
 
-class ColorPoint : public Point {
-	string color;
-public:
-	ColorPoint():ColorPoint(1, 1){};
-	ColorPoint(int x, int y) : Point(x, y) { this->color = "BLACK"; };
+class ColorPoint : public Point{
+	string name;
+	public:
+	ColorPoint() : Point(0, 0){this->name = "BLACK";}
+	ColorPoint(int x, int y) : Point(x, y) {this->name = "BLACK";}
+	void setPoint(int x, int y){move(x, y);}
+	void setColor(string name){this->name = name;}
 	void show();
-	void setPoint(int x, int y);
-	void setColor(string str);
 };
 
-void ColorPoint::setColor(string str) {
-	this->color = str;
+void ColorPoint::show(){
+	cout << name << "색으로 (" << getX() << "," << getY() << ")에 위치한 점입니다." << endl;
 }
-
-void ColorPoint::setPoint(int x, int y) {
-	move(x, y);
-}
-
-void ColorPoint::show() {
-	cout << color << "색으로 (" << getX() << ", " << getY() << ")에 위치한 점입니다." << endl;
-}
-
 
 int main() {
 	ColorPoint zeroPoint; 
