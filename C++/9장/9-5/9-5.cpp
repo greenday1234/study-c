@@ -9,36 +9,36 @@ public:
 	virtual bool operation() = 0; // 순수 가상 함수
 };
 
-class ANDGate : public AbstractGate {
-
-public:
-	bool operation() {
-		if (x == true && y == true)
+class ANDGate : public AbstractGate{
+	public:
+	bool operation(){
+		if(x==1 && y==1){
 			return true;
+		}
 		else
-			return false;
+		return false;
 	}
 };
 
-class ORGate : public AbstractGate {
-
-public:
-	bool operation() {
-		if (x == true || y == true)
+class ORGate : public AbstractGate{
+	public:
+	bool operation(){
+		if(x==1||y==1){
 			return true;
+		}
 		else
-			return false;
+		return false;
 	}
 };
 
-class XORGate : public AbstractGate {
-
-public:
-	bool operation() {
-		if ((x == true && y == true) || (x == false && y == true))
+class XORGate : public AbstractGate{
+	public:
+	bool operation(){
+		if((x==1&&y==0 || y==1&&x==0)){
 			return true;
+		}
 		else
-			return false;
+		return false;
 	}
 };
 
