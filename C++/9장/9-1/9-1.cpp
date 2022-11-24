@@ -19,12 +19,12 @@ public:
 	}
 };
 
-class WonToDollar : public Converter {
-public:
-	WonToDollar(double ratio = 0.0) : Converter(ratio){}
-	double convert(double src) { return src / ratio; }
-	string getSourceString() { return "원"; }
-	string getDestString() { return "달러"; }
+class WonToDollar : public Converter{
+	public:
+	WonToDollar(double ratio = 0) : Converter(ratio){}
+	double convert(double src){return src/ratio;}
+	string getSourceString(){return "원";}
+	string getDestString(){return "달러";}
 };
 
 int main() {

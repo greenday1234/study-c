@@ -33,15 +33,13 @@ void LoopAdder::run() {
 	write(); // 결과 sum을 출력한다.
 }
 
-class ForLoopAdder : public LoopAdder {
-
-public:
-	ForLoopAdder(string name) : LoopAdder(name) {};
-	int calculate() {
-		int sum = 0;
-		for (int i = getX(); i <= getY(); i++) {
-			sum += i;
-		}
+class ForLoopAdder : public LoopAdder{
+	public:
+	ForLoopAdder(string name=""):LoopAdder(name){}
+	int calculate(){
+		int sum=0;
+		for(int i=getX();i<=getY();i++)
+		sum+=i;
 		return sum;
 	}
 };

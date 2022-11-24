@@ -19,12 +19,12 @@ public:
 	}
 };
 
-class KmToMile : public Converter {
-public:
-	KmToMile(double ratio = 0.0) : Converter(ratio){}
-	double convert(double src) { return src / ratio; }
-	string getSourceString() { return "Km"; }
-	string getDestString() { return "Mile"; }
+class KmToMile : public Converter{
+	public:
+	KmToMile(double ratio = 0):Converter(ratio){}
+	double convert(double src){return src/ratio;}
+	string getSourceString(){return "Km";}
+	string getDestString(){return "Mile";}
 };
 
 int main() {

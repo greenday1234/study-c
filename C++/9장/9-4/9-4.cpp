@@ -33,32 +33,32 @@ void LoopAdder::run() {
 	write(); // 결과 sum을 출력한다.
 }
 
-class WhileLoopAdder : public LoopAdder {
-
-public:
-	WhileLoopAdder(string name) : LoopAdder(name) {};
-	int calculate() {
-		int sum = 0;
-		int i = getX();
-		while (i <= getY()) {
-			sum += i;
-			i++;
+class WhileLoopAdder : public LoopAdder{
+	public:
+	WhileLoopAdder(string name=""):LoopAdder(name){}
+	int calculate(){
+		int sum=0;
+		int x=getX();
+		int y=getY();
+		while(x<=y){
+			sum+=x;
+			x++;
 		}
 		return sum;
 	}
 };
 
-class DoWhileLoopAdder : public LoopAdder {
-
-public:
-	DoWhileLoopAdder(string name) : LoopAdder(name) {};
-	int calculate() {
-		int sum = 0;
-		int i = getX();
-		do {
-			sum += i;
-			i++;
-		} while (i <= getY());
+class DoWhileLoopAdder : public LoopAdder{
+	public:
+	DoWhileLoopAdder(string name=""):LoopAdder(name){}
+	int calculate(){
+		int sum=0;
+		int x=getX();
+		int y=getY();
+		do{
+			sum+=x;
+			x++;
+		}while(x<=y);
 		return sum;
 	}
 };
