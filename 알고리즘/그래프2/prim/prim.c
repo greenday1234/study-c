@@ -37,8 +37,7 @@ void prim(GraphType* g, int s){
         u = get_min_vertex(g->n);
         selected[u] = TRUE;
         printf("selected ");            //출력문 시작
-		for (int i = 0; i < g->n; i++) 
-                {
+		for (int i = 0; i < g->n; i++) {
 			printf("%d ", selected[i]);
 		}
 		printf("\ndist ");
