@@ -91,12 +91,18 @@ void preorder(AVLNode *root){
 int main(){
     AVLNode *root = NULL;
 
+    root = insert(root, 3);
+    root = insert(root, 5);
+    root = insert(root, 1);
+    root = insert(root, 8);
+    root = insert(root, 6);
+    root = insert(root, 2);
+    root = insert(root, 11);
+    root = insert(root, 4);
+    root = insert(root, 12);
     root = insert(root, 10);
-    root = insert(root, 20);
-    root = insert(root, 30);
-    root = insert(root, 40);
-    root = insert(root, 50);
-    root = insert(root, 29);
+    root = insert(root, 7);
+    root = insert(root, 9);
 
     printf("전위 순회 결과\n");
     preorder(root);
