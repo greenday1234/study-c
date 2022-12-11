@@ -66,7 +66,7 @@ SortedArray SortedArray::operator +(SortedArray& op2){
         s.p[i] = p[i];
     }
     for(int i=size;i<s.size;i++){
-        s.p[i] = op2.p[i];
+        s.p[i] = op2.p[i-size];
     }
     return s;
 }
