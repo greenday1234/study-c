@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CFA45F2129CAF68200B51CED /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFA45F2029CAF68200B51CED /* test.cpp */; };
 		CFA45F2929CAF99C00B51CED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2829CAF99C00B51CED /* OpenGL.framework */; };
 		CFA45F2B29CAF9B600B51CED /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2A29CAF9B600B51CED /* GLUT.framework */; };
+		CFA45F3A29CB038800B51CED /* Idle Star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFA45F3929CB038800B51CED /* Idle Star.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +25,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CFA45F1D29CAF68200B51CED /* Greenday */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Greenday; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFA45F2029CAF68200B51CED /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		CFA45F1D29CAF68200B51CED /* Graphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Graphics; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFA45F2829CAF99C00B51CED /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		CFA45F2A29CAF9B600B51CED /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		CFA45F2C29CAFF3700B51CED /* Square.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Square.cpp; sourceTree = "<group>"; usesTabs = 0; };
+		CFA45F2E29CAFFB800B51CED /* Random Square.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Random Square.cpp"; sourceTree = "<group>"; };
+		CFA45F3129CB004900B51CED /* Two Triangle Star.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Two Triangle Star.cpp"; sourceTree = "<group>"; };
+		CFA45F3329CB00FF00B51CED /* Reshape_Key_Mouse Callback.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Reshape_Key_Mouse Callback.cpp"; sourceTree = "<group>"; };
+		CFA45F3529CB02A700B51CED /* Timer Callback.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Timer Callback.cpp"; sourceTree = "<group>"; };
+		CFA45F3729CB033600B51CED /* Idle Callback.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Idle Callback.cpp"; sourceTree = "<group>"; };
+		CFA45F3929CB038800B51CED /* Idle Star.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Idle Star.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +53,7 @@
 		CFA45F1429CAF68200B51CED = {
 			isa = PBXGroup;
 			children = (
-				CFA45F1F29CAF68200B51CED /* Greenday */,
+				CFA45F1F29CAF68200B51CED /* Graphics */,
 				CFA45F1E29CAF68200B51CED /* Products */,
 				CFA45F2729CAF99C00B51CED /* Frameworks */,
 			);
@@ -56,17 +62,23 @@
 		CFA45F1E29CAF68200B51CED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CFA45F1D29CAF68200B51CED /* Greenday */,
+				CFA45F1D29CAF68200B51CED /* Graphics */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CFA45F1F29CAF68200B51CED /* Greenday */ = {
+		CFA45F1F29CAF68200B51CED /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				CFA45F2029CAF68200B51CED /* test.cpp */,
+				CFA45F2C29CAFF3700B51CED /* Square.cpp */,
+				CFA45F2E29CAFFB800B51CED /* Random Square.cpp */,
+				CFA45F3129CB004900B51CED /* Two Triangle Star.cpp */,
+				CFA45F3329CB00FF00B51CED /* Reshape_Key_Mouse Callback.cpp */,
+				CFA45F3529CB02A700B51CED /* Timer Callback.cpp */,
+				CFA45F3729CB033600B51CED /* Idle Callback.cpp */,
+				CFA45F3929CB038800B51CED /* Idle Star.cpp */,
 			);
-			path = Greenday;
+			path = Graphics;
 			sourceTree = "<group>";
 		};
 		CFA45F2729CAF99C00B51CED /* Frameworks */ = {
@@ -81,9 +93,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CFA45F1C29CAF68200B51CED /* Greenday */ = {
+		CFA45F1C29CAF68200B51CED /* Graphics */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CFA45F2429CAF68200B51CED /* Build configuration list for PBXNativeTarget "Greenday" */;
+			buildConfigurationList = CFA45F2429CAF68200B51CED /* Build configuration list for PBXNativeTarget "Graphics" */;
 			buildPhases = (
 				CFA45F1929CAF68200B51CED /* Sources */,
 				CFA45F1A29CAF68200B51CED /* Frameworks */,
@@ -93,9 +105,9 @@
 			);
 			dependencies = (
 			);
-			name = Greenday;
+			name = Graphics;
 			productName = Greenday;
-			productReference = CFA45F1D29CAF68200B51CED /* Greenday */;
+			productReference = CFA45F1D29CAF68200B51CED /* Graphics */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -112,7 +124,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CFA45F1829CAF68200B51CED /* Build configuration list for PBXProject "Greenday" */;
+			buildConfigurationList = CFA45F1829CAF68200B51CED /* Build configuration list for PBXProject "Graphics" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -125,7 +137,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CFA45F1C29CAF68200B51CED /* Greenday */,
+				CFA45F1C29CAF68200B51CED /* Graphics */,
 			);
 		};
 /* End PBXProject section */
@@ -135,7 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFA45F2129CAF68200B51CED /* test.cpp in Sources */,
+				CFA45F3A29CB038800B51CED /* Idle Star.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +282,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CFA45F1829CAF68200B51CED /* Build configuration list for PBXProject "Greenday" */ = {
+		CFA45F1829CAF68200B51CED /* Build configuration list for PBXProject "Graphics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CFA45F2229CAF68200B51CED /* Debug */,
@@ -279,7 +291,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CFA45F2429CAF68200B51CED /* Build configuration list for PBXNativeTarget "Greenday" */ = {
+		CFA45F2429CAF68200B51CED /* Build configuration list for PBXNativeTarget "Graphics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CFA45F2529CAF68200B51CED /* Debug */,
