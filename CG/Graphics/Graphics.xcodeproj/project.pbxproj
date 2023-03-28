@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF321D4329D04BFA009DC663 /* turkiye.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF321D3D29D03354009DC663 /* turkiye.cpp */; };
+		CF5523D929D30828007EFF1B /* Mouse Star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF321D4129D04B49009DC663 /* Mouse Star.cpp */; };
 		CFA45F2929CAF99C00B51CED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2829CAF99C00B51CED /* OpenGL.framework */; };
 		CFA45F2B29CAF9B600B51CED /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2A29CAF9B600B51CED /* GLUT.framework */; };
 /* End PBXBuildFile section */
@@ -151,7 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF321D4329D04BFA009DC663 /* turkiye.cpp in Sources */,
+				CF5523D929D30828007EFF1B /* Mouse Star.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
