@@ -21,6 +21,7 @@ glColor3f(0.75, 0.0, 0.0);    // 빨강으로 설정
     glVertex2f(0.2, 0.7);
     glEnd();
 
+    glViewport(0.0, 0.0, 600.0, 400.0);
     glFlush();    // 사각형을 화면에 그림
 }
 
@@ -28,8 +29,7 @@ void init() {
     glClearColor(0.0, 0.0, 0.0, 0.0);    // 윈도우 배경을 검은색으로 지정
     glClear(GL_COLOR_BUFFER_BIT);    // 색상 버퍼를 지움
 
-    // 직교 투영: left, right, bottom, top, near, far
-    glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0);
+    gluOrtho2D(-0.025, 1.025, 0.15, 0.85);
 }
 
 void keyboardProcess(unsigned char key, int x, int y) {
@@ -159,7 +159,7 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 
     // 창의 크기와 위치 설정
-    glutInitWindowSize(500, 500);
+    glutInitWindowSize(600, 400);
     glutInitWindowPosition(100, 100);
 
     glutCreateWindow("turkiye");    // 윈도우 생성
