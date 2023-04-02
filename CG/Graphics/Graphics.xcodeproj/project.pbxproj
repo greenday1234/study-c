@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CFA01A3F29D857D300C1820F /* Mouse Star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF321D4129D04B49009DC663 /* Mouse Star.cpp */; };
+		CF6EA22C29D947FA006D2A53 /* Mouse Star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF321D4129D04B49009DC663 /* Mouse Star.cpp */; };
 		CFA45F2929CAF99C00B51CED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2829CAF99C00B51CED /* OpenGL.framework */; };
 		CFA45F2B29CAF9B600B51CED /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2A29CAF9B600B51CED /* GLUT.framework */; };
 /* End PBXBuildFile section */
@@ -27,7 +27,6 @@
 /* Begin PBXFileReference section */
 		CF321D3D29D03354009DC663 /* turkiye.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = turkiye.cpp; sourceTree = "<group>"; };
 		CF321D4129D04B49009DC663 /* Mouse Star.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Mouse Star.cpp"; sourceTree = "<group>"; };
-		CFA01A3A29D8535F00C1820F /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		CFA45F1D29CAF68200B51CED /* Graphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Graphics; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFA45F2829CAF99C00B51CED /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		CFA45F2A29CAF9B600B51CED /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -82,7 +81,6 @@
 				CFA45F3929CB038800B51CED /* Idle Star.cpp */,
 				CF321D3D29D03354009DC663 /* turkiye.cpp */,
 				CF321D4129D04B49009DC663 /* Mouse Star.cpp */,
-				CFA01A3A29D8535F00C1820F /* test.cpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -153,7 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFA01A3F29D857D300C1820F /* Mouse Star.cpp in Sources */,
+				CF6EA22C29D947FA006D2A53 /* Mouse Star.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

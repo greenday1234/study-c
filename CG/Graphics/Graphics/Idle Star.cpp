@@ -11,7 +11,7 @@
 GLfloat angle = 0.0f;
 
 void idleProcess() {
-    angle += 0.0001;
+    angle += 0.02;
     if (angle > 360.0)
         angle = 0.0f;
 
@@ -39,6 +39,7 @@ void display() {
 
     glFlush();
     glutSwapBuffers();
+
 }
 
 void init() {
