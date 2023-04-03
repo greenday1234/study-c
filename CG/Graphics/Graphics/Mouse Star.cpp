@@ -15,14 +15,13 @@
 int red = 255, green = 255, blue = 255;
 GLfloat Vertices[MAX_VER][2];
 GLfloat angle = 0.0f;
-int one = 0;
 int count = 0;
 int click = 0;
 
 //선 그리는 함수
 void draw_line(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2)
 {
-    glColor3ub(red, green, blue);
+    glColor3f(1, 1, 1);
     glBegin(GL_LINES);
         glVertex2f(x1, y1);
         glVertex2f(x2, y2);
@@ -132,13 +131,16 @@ void mouseProcess(int button, int state, GLint x, GLint y) {
     }
     else if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) {
         click++;
+        red = rand()%255+1;
+        green = rand()%255+1;
+        blue = rand()%255+1;
     }
 }
 
 int main(int argc, char** argv) {
     glutInit(&argc, argv);    // GLUT 상태를 초기화
     // 디스플레이모드형식 선택: Single buffer & RGBA color 모드 선택
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitDisplayMode(GLUT_RGB);
 
     // 창의 크기와 위치 설정
     glutInitWindowSize(600, 400);

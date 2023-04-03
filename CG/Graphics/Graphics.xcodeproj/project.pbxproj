@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF6EA23129D96645006D2A53 /* Korea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6EA22D29D95EB1006D2A53 /* Korea.cpp */; };
+		CF4C289029DB293C003ED9C9 /* Korea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6EA22D29D95EB1006D2A53 /* Korea.cpp */; };
 		CFA45F2929CAF99C00B51CED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2829CAF99C00B51CED /* OpenGL.framework */; };
 		CFA45F2B29CAF9B600B51CED /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2A29CAF9B600B51CED /* GLUT.framework */; };
 /* End PBXBuildFile section */
@@ -155,7 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF6EA23129D96645006D2A53 /* Korea.cpp in Sources */,
+				CF4C289029DB293C003ED9C9 /* Korea.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
