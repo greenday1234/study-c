@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF4C289029DB293C003ED9C9 /* Korea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6EA22D29D95EB1006D2A53 /* Korea.cpp */; };
 		CFA45F2929CAF99C00B51CED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2829CAF99C00B51CED /* OpenGL.framework */; };
 		CFA45F2B29CAF9B600B51CED /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2A29CAF9B600B51CED /* GLUT.framework */; };
+		CFD7596C29DD917E001E286E /* Camera Move.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFD7596B29DD917E001E286E /* Camera Move.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +38,11 @@
 		CFA45F3529CB02A700B51CED /* Timer Callback.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Timer Callback.cpp"; sourceTree = "<group>"; };
 		CFA45F3729CB033600B51CED /* Idle Callback.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Idle Callback.cpp"; sourceTree = "<group>"; };
 		CFA45F3929CB038800B51CED /* Idle Star.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Idle Star.cpp"; sourceTree = "<group>"; };
+		CFD7596329DD8EF7001E286E /* Drawing Shapes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Drawing Shapes.cpp"; sourceTree = "<group>"; };
+		CFD7596529DD900E001E286E /* Drawging Line.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Drawging Line.cpp"; sourceTree = "<group>"; };
+		CFD7596729DD90A7001E286E /* Viewport.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Viewport.cpp; sourceTree = "<group>"; };
+		CFD7596929DD911F001E286E /* 3D Cube.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "3D Cube.cpp"; sourceTree = "<group>"; };
+		CFD7596B29DD917E001E286E /* Camera Move.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Camera Move.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,11 @@
 				CF321D3D29D03354009DC663 /* turkiye.cpp */,
 				CF321D4129D04B49009DC663 /* Mouse Star.cpp */,
 				CF6EA22D29D95EB1006D2A53 /* Korea.cpp */,
+				CFD7596329DD8EF7001E286E /* Drawing Shapes.cpp */,
+				CFD7596529DD900E001E286E /* Drawging Line.cpp */,
+				CFD7596729DD90A7001E286E /* Viewport.cpp */,
+				CFD7596929DD911F001E286E /* 3D Cube.cpp */,
+				CFD7596B29DD917E001E286E /* Camera Move.cpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -153,7 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF4C289029DB293C003ED9C9 /* Korea.cpp in Sources */,
+				CFD7596C29DD917E001E286E /* Camera Move.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
