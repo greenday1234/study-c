@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CFA45F2929CAF99C00B51CED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2829CAF99C00B51CED /* OpenGL.framework */; };
 		CFA45F2B29CAF9B600B51CED /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2A29CAF9B600B51CED /* GLUT.framework */; };
-		CFD7596C29DD917E001E286E /* Camera Move.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFD7596B29DD917E001E286E /* Camera Move.cpp */; };
+		CFD0E7B229E78DF20017EDFA /* Point Rotate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFD0E7B129E78DF20017EDFA /* Point Rotate.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +38,9 @@
 		CFA45F3529CB02A700B51CED /* Timer Callback.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Timer Callback.cpp"; sourceTree = "<group>"; };
 		CFA45F3729CB033600B51CED /* Idle Callback.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Idle Callback.cpp"; sourceTree = "<group>"; };
 		CFA45F3929CB038800B51CED /* Idle Star.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Idle Star.cpp"; sourceTree = "<group>"; };
+		CFD0E7AC29E78D170017EDFA /* Push Pop Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Push Pop Matrix.cpp"; sourceTree = "<group>"; };
+		CFD0E7AE29E78D810017EDFA /* Frustum Ortho.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Frustum Ortho.cpp"; sourceTree = "<group>"; };
+		CFD0E7B129E78DF20017EDFA /* Point Rotate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Point Rotate.cpp"; sourceTree = "<group>"; };
 		CFD7596329DD8EF7001E286E /* Drawing Shapes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Drawing Shapes.cpp"; sourceTree = "<group>"; };
 		CFD7596529DD900E001E286E /* Drawging Line.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Drawging Line.cpp"; sourceTree = "<group>"; };
 		CFD7596729DD90A7001E286E /* Viewport.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Viewport.cpp; sourceTree = "<group>"; };
@@ -93,6 +96,9 @@
 				CFD7596729DD90A7001E286E /* Viewport.cpp */,
 				CFD7596929DD911F001E286E /* 3D Cube.cpp */,
 				CFD7596B29DD917E001E286E /* Camera Move.cpp */,
+				CFD0E7AC29E78D170017EDFA /* Push Pop Matrix.cpp */,
+				CFD0E7AE29E78D810017EDFA /* Frustum Ortho.cpp */,
+				CFD0E7B129E78DF20017EDFA /* Point Rotate.cpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -163,7 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFD7596C29DD917E001E286E /* Camera Move.cpp in Sources */,
+				CFD0E7B229E78DF20017EDFA /* Point Rotate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
