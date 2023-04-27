@@ -55,7 +55,7 @@ void display() {
     glViewport(width / 2, 0, width / 2, height / 2);
 
     draw_box(0.0f, 0.0f, 1.0f);
-
+    
     glutSwapBuffers();
 }
 
@@ -74,7 +74,7 @@ void reshape(int new_w, int new_h) {
 
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(500, 500);
     glutInitWindowPosition(100, 100);
     glutCreateWindow(argv[0]);

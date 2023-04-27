@@ -39,16 +39,16 @@ void display() {
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-    glColor3f(1.0, 0.0, 0.0);
+    glColor3f(1.0, 0.0, 0.0);   //red
     draw_cube();
 
     glPushMatrix();
-    glColor3f(0.0, 1.0, 0.0);
+    glColor3f(0.0, 1.0, 0.0);   //green
     glRotatef(45, 0.0, 0.0, 1.0);
     draw_cube();
     glPopMatrix();
 
-    glColor3f(0.0, 0.0, 1.0);
+    glColor3f(0.0, 0.0, 1.0);   //blue
     glTranslatef(0.5, 0.5, 0.0);
     glRotatef(45, 0.0, 0.0, 1.0);
     glTranslatef(-0.5, -0.5, 0.0);

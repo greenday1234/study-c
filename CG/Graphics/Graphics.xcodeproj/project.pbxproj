@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF1011A229E97BC800F4694C /* midterm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF1011A129E97BC800F4694C /* midterm.cpp */; };
 		CFA45F2929CAF99C00B51CED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2829CAF99C00B51CED /* OpenGL.framework */; };
 		CFA45F2B29CAF9B600B51CED /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2A29CAF9B600B51CED /* GLUT.framework */; };
 /* End PBXBuildFile section */
@@ -25,9 +24,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CF1011A129E97BC800F4694C /* midterm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = midterm.cpp; sourceTree = "<group>"; };
 		CF321D3D29D03354009DC663 /* turkiye.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = turkiye.cpp; sourceTree = "<group>"; };
 		CF321D4129D04B49009DC663 /* Mouse Star.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Mouse Star.cpp"; sourceTree = "<group>"; };
+		CF4A99A229FA043800698249 /* Planet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Planet.cpp; sourceTree = "<group>"; };
+		CF4A99A429FA047E00698249 /* Pop-up Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Pop-up Menu.cpp"; sourceTree = "<group>"; };
+		CF4A99A629FA04E500698249 /* Pop-up Sub Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Pop-up Sub Menu.cpp"; sourceTree = "<group>"; };
+		CF4A99A829FA052000698249 /* RGB Color Cube.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "RGB Color Cube.cpp"; sourceTree = "<group>"; };
+		CF4A99AA29FA05D800698249 /* Planet + Pop up.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Planet + Pop up.cpp"; sourceTree = "<group>"; };
 		CF6EA22D29D95EB1006D2A53 /* Korea.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Korea.cpp; sourceTree = "<group>"; };
 		CFA45F1D29CAF68200B51CED /* Graphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Graphics; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFA45F2829CAF99C00B51CED /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -47,6 +50,7 @@
 		CFD7596729DD90A7001E286E /* Viewport.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Viewport.cpp; sourceTree = "<group>"; };
 		CFD7596929DD911F001E286E /* 3D Cube.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "3D Cube.cpp"; sourceTree = "<group>"; };
 		CFD7596B29DD917E001E286E /* Camera Move.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Camera Move.cpp"; sourceTree = "<group>"; };
+		CFF4304E29EF74E500F990A5 /* Midterm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Midterm.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,12 @@
 				CFD0E7AC29E78D170017EDFA /* Push Pop Matrix.cpp */,
 				CFD0E7AE29E78D810017EDFA /* Frustum Ortho.cpp */,
 				CFD0E7B129E78DF20017EDFA /* Point Rotate.cpp */,
-				CF1011A129E97BC800F4694C /* midterm.cpp */,
+				CFF4304E29EF74E500F990A5 /* Midterm.cpp */,
+				CF4A99A229FA043800698249 /* Planet.cpp */,
+				CF4A99A429FA047E00698249 /* Pop-up Menu.cpp */,
+				CF4A99A629FA04E500698249 /* Pop-up Sub Menu.cpp */,
+				CF4A99A829FA052000698249 /* RGB Color Cube.cpp */,
+				CF4A99AA29FA05D800698249 /* Planet + Pop up.cpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -171,7 +180,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF1011A229E97BC800F4694C /* midterm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

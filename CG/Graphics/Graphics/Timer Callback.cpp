@@ -57,7 +57,6 @@ void display() {
     glVertex3f(-0.75, 0.75, 0.0);
     glEnd();
 
-    glFlush();
     glutSwapBuffers();
 }
 
