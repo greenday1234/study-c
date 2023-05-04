@@ -24,6 +24,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF2802B02A033B5400C3F02E /* Alpha Blending.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Alpha Blending.cpp"; sourceTree = "<group>"; };
+		CF2802B22A033BA000C3F02E /* Light Example 1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Light Example 1.cpp"; sourceTree = "<group>"; };
+		CF2802B42A033C3A00C3F02E /* Meterial Property.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Meterial Property.cpp"; sourceTree = "<group>"; };
+		CF2802B62A033E2600C3F02E /* Moving Lighting Example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Moving Lighting Example.cpp"; sourceTree = "<group>"; };
+		CF2802B82A033E9200C3F02E /* Shading.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shading.cpp; sourceTree = "<group>"; };
 		CF321D3D29D03354009DC663 /* turkiye.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = turkiye.cpp; sourceTree = "<group>"; };
 		CF321D4129D04B49009DC663 /* Mouse Star.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Mouse Star.cpp"; sourceTree = "<group>"; };
 		CF4A99A229FA043800698249 /* Planet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Planet.cpp; sourceTree = "<group>"; };
@@ -110,6 +115,11 @@
 				CF4A99A629FA04E500698249 /* Pop-up Sub Menu.cpp */,
 				CF4A99A829FA052000698249 /* RGB Color Cube.cpp */,
 				CF4A99AA29FA05D800698249 /* Planet + Pop up.cpp */,
+				CF2802B02A033B5400C3F02E /* Alpha Blending.cpp */,
+				CF2802B22A033BA000C3F02E /* Light Example 1.cpp */,
+				CF2802B42A033C3A00C3F02E /* Meterial Property.cpp */,
+				CF2802B62A033E2600C3F02E /* Moving Lighting Example.cpp */,
+				CF2802B82A033E9200C3F02E /* Shading.cpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
