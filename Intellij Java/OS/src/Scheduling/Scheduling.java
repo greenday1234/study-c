@@ -54,10 +54,10 @@ public class Scheduling {
             sorce[i].setTime(Time);
         }
 
-        FCFS fcfs = new FCFS(sorce);
-        //SJF sjf = new SJF();
-        //Non_Priority np = new Non_Priority();
-        //Priority pri = new Priority();
+        //FCFS fcfs = new FCFS(sorce);
+        //SJF sjf = new SJF(sorce);
+        //Non_Priority np = new Non_Priority(sorce);
+        Priority pri = new Priority(sorce);
         //RR rr = new RR();
         //SRT srt = new SRT();
         //HRN hrn = new HRN();

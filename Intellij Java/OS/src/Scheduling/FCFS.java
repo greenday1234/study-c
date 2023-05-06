@@ -56,7 +56,7 @@ public class FCFS {
                 num = 0;
             }
             else {
-                aACT[i] = num + new_sorce[i].getAction();
+                aACT[i] = num + new_sorce[i].getAction() - new_sorce[i].getArrival();
                 num = 0;
             }
             System.out.print(new_sorce[i].getID() + " : " + aACT[i] + "\n");
