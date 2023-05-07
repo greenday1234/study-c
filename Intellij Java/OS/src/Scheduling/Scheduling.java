@@ -10,6 +10,7 @@ class Sorce {
     int Priority;
     int Time;
     int Action = 1;
+    int tmp = 0;
     public Sorce(String ID, int Arrival, int Service, int Priority){
         this.ID = ID;
         this.Arrival = Arrival;
@@ -22,6 +23,24 @@ class Sorce {
     public int getService(){ return Service; }
     public int getPriority(){ return Priority; }
     public int getAction(){ return Action; }
+
+    public Sorce(Sorce sorce){
+        this.ID = sorce.ID;
+        this.Arrival = sorce.Arrival;
+        this.Service = sorce.Service;
+        this.Priority = sorce.Priority;
+    }
+}
+
+class Priority_Sorce extends Sorce{
+    public Priority_Sorce(String ID, int Arrival, int Service, int Priority){
+        super(ID, Arrival, Service, Priority);
+    }
+
+    public int compareTo(Priority_Sorce priority_sorce) {
+        int compareP=((Priority_Sorce)priority_sorce).getPriority();
+        return this.getPriority() - compareP;
+    }
 }
 
 public class Scheduling {
@@ -57,8 +76,8 @@ public class Scheduling {
         //FCFS fcfs = new FCFS(sorce);
         //SJF sjf = new SJF(sorce);
         //Non_Priority np = new Non_Priority(sorce);
-        Priority pri = new Priority(sorce);
-        //RR rr = new RR();
+        //Priority pri = new Priority(sorce);
+        RR rr = new RR(sorce);
         //SRT srt = new SRT();
         //HRN hrn = new HRN();
 

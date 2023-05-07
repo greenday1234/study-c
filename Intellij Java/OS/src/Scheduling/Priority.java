@@ -1,12 +1,13 @@
 package Scheduling;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Priority {
     public Priority(Sorce[] sorce){
         //새로운 리스트 생성
         Queue<Sorce> n_sorce = new LinkedList<Sorce>();
-        Queue<Sorce> sort_sorce = new LinkedList<Sorce>();
+        ArrayList<Sorce> sort_sorce = new ArrayList<Sorce>();
         Sorce[] new_sorce = new Sorce[sorce.length];
 
         //도착시간 정렬
@@ -32,13 +33,67 @@ public class Priority {
         }
 
         int run = 0;
-        Sorce box;
-        while(run <= total){
-            //현재 시간에서 도착시간이 run인 프로세스가 있는 경우 우선순위 비교
-            if(run == n_sorce.peek().getArrival()){
-                box = n_sorce.remove();
-                if(box.getPriority() < n_sorce.peek().getPriority()){
+        Sorce box = n_sorce.remove();
+        int pcount = 0;
+        Sorce[] p_sorce = new Sorce[sorce.length];
+        int service_count = 0;
+        Sorce copy;
+        while(run < total){
+           if(!n_sorce.isEmpty() && n_sorce.peek().getArrival() == run){
+               //도착한 프로세스의 우선순위가 실행중인 프로세스의 우선순위보다 높은 경우
+               if(n_sorce.peek().getPriority() < box.getPriority()){
+                   if(box.Service <= 0){
+                       copy = new Sorce(box);
+                       copy.Service = service_count;
+                       sort_sorce.add(copy);
+                       service_count = 0;
+                       box = n_sorce.remove();
+                   }
+                   else {
+                       copy = new Sorce(box);
+                       total = total - copy.Service;
+                       box.tmp = 1;
+                       p_sorce[pcount++] = box;
+                       copy.Service = service_count;
+                       box.Arrival = run;
+                       sort_sorce.add(copy);
+                       service_count = 0;
+                       box = n_sorce.remove();
+                   }
+               }
+               //도착한 프로세스의 우선순위가 실행중인 프로세스의 우선순위보다 낮은 경우
+               else if(n_sorce.peek().getPriority() > box.getPriority()){
+                   total = total - n_sorce.peek().getService();
+                   copy = new Sorce(n_sorce.remove());
+                   p_sorce[pcount++] = copy;
+               }
+           }
+           System.out.print(box.getID() + " ");
+           box.Service--;
+           service_count++;
+           run++;
+           if(run == total){
+               copy = new Sorce(box);
+               copy.Service = service_count;
+               sort_sorce.add(copy);
+           }
+        }
 
+        if(pcount > 1) {
+            Arrays.sort(p_sorce, 0, pcount, (a, b) -> a.getPriority() - b.getPriority());
+        }
+
+        Queue<Sorce> P_sorce = new LinkedList<Sorce>();
+        for(int i=0; i<pcount; i++){
+            P_sorce.add(p_sorce[i]);
+        }
+
+        if(!P_sorce.isEmpty()){
+            for(int i=0; i<=P_sorce.size(); i++){
+                copy = new Sorce(P_sorce.peek());
+                sort_sorce.add(P_sorce.remove());
+                for(int k=0; k<copy.getService(); k++){
+                    System.out.print(copy.getID() + " ");
                 }
             }
         }
@@ -60,7 +115,7 @@ public class Priority {
         for(int i=0; i< sort_sorce.size(); i++){
             AWT += aAWT[i];
         }
-        AWT = AWT/ sort_sorce.size();
+        AWT = AWT/ sorce.length;
         System.out.println("각  프로세스별 평균 대기 시간");
         System.out.println(AWT);
 
@@ -75,12 +130,19 @@ public class Priority {
             if(i == 0){
                 aACT[i] = sort_sorce.get(i).getAction();
                 num = 0;
+                System.out.print(sort_sorce.get(i).getID() + " : " + aACT[i] + "\n");
+
+            }
+            else if(sort_sorce.get(i).tmp == 1){
+                num=0;
+                continue;
             }
             else {
-                aACT[i] = num + sort_sorce.get(i).getAction() - sort_sorce.get(i).getArrival();
-                num = 0;
+                    aACT[i] = num + sort_sorce.get(i).getAction() - sort_sorce.get(i).getArrival();
+                    num = 0;
+                System.out.print(sort_sorce.get(i).getID() + " : " + aACT[i] + "\n");
+
             }
-            System.out.print(sort_sorce.get(i).getID() + " : " + aACT[i] + "\n");
         }
 
         //평균 응답 시간
@@ -88,7 +150,7 @@ public class Priority {
         for(int i=0; i<sort_sorce.size(); i++){
             ACT += aACT[i];
         }
-        ACT = ACT/sort_sorce.size();
+        ACT = ACT/sorce.length;
         System.out.println("평균 응답 시간");
         System.out.println(ACT);
 
@@ -116,7 +178,7 @@ public class Priority {
         for(int i=0; i<sort_sorce.size(); i++){
             ATT += aATT[i];
         }
-        ATT = ATT/sort_sorce.size();
+        ATT = ATT/sorce.length;
         System.out.println("평균 반환 시간");
         System.out.println(ATT);
     }
