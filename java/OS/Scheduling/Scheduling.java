@@ -3,18 +3,21 @@ package Scheduling;
 import java.util.*;
 import java.io.*;
 
-class Sorce {
+class Source {
     String ID;
     int Arrival;
     int Service;
     int Priority;
     int Time;
     int Action = 1;
-    public Sorce(String ID, int Arrival, int Service, int Priority){
+    int RunTime;
+    int Temp = 0;   //프로세스가 도착했는지 확인
+    public Source(String ID, int Arrival, int Service, int Priority, int RunTime){
         this.ID = ID;
         this.Arrival = Arrival;
         this.Service = Service;
         this.Priority = Priority;
+        this.RunTime = RunTime;
     };
     public void setTime(int Time){ this.Time = Time; }
     public String getID(){ return ID; }
@@ -22,24 +25,6 @@ class Sorce {
     public int getService(){ return Service; }
     public int getPriority(){ return Priority; }
     public int getAction(){ return Action; }
-
-    public Sorce(Sorce sorce){
-        this.ID = sorce.ID;
-        this.Arrival = sorce.Arrival;
-        this.Service = sorce.Service;
-        this.Priority = sorce.Priority;
-    }
-}
-
-class Priority_Sorce extends Sorce{
-    public Priority_Sorce(String ID, int Arrival, int Service, int Priority){
-        super(ID, Arrival, Service, Priority);
-    }
-
-    public int compareTo(Priority_Sorce priority_sorce) {
-        int compareP=((Priority_Sorce)priority_sorce).getPriority();
-        return this.getPriority() - compareP;
-    }
 }
 
 public class Scheduling {
@@ -55,7 +40,7 @@ public class Scheduling {
         Scanner scanner = new Scanner(new File("./Input.txt"));
         //파일에서 데이터 읽어서 객체 배열에 값 넣기
         ProcessCount = Integer.parseInt(scanner.nextLine());
-        Sorce[] sorce = new Sorce[ProcessCount];
+        Source[] source = new Source[ProcessCount];
 
         for (int i = 0; i < ProcessCount; i++) {
             str = scanner.nextLine();
@@ -64,21 +49,21 @@ public class Scheduling {
             Arrival = Integer.parseInt(arr[1]);
             Service = Integer.parseInt(arr[2]);
             Priority = Integer.parseInt(arr[3]);
-            sorce[i] = new Sorce(ID, Arrival, Service, Priority);
+            source[i] = new Source(ID, Arrival, Service, Priority, 0);
         }
 
         Time = Integer.parseInt(scanner.nextLine());
         for(int i=0; i<ProcessCount; i++){
-            sorce[i].setTime(Time);
+            source[i].setTime(Time);
         }
 
-        FCFS fcfs = new FCFS(sorce);
-        //SJF sjf = new SJF(sorce);
-        //Non_Priority np = new Non_Priority(sorce);
-        //Priority pri = new Priority(sorce);
-        //RR rr = new RR(sorce);
-        //SRT srt = new SRT(sorce);
-        //HRN hrn = new HRN(sorce);
+        //FCFS fcfs = new FCFS(source);
+        //SJF sjf = new SJF(source);
+        //Non_Priority np = new Non_Priority(source);
+        //Priority pri = new Priority(source);
+        //RR rr = new RR(source);
+        //SRT srt = new SRT(source);
+        HRN hrn = new HRN(source);
 
 
     }
