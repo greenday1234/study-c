@@ -13,7 +13,8 @@ public class HRN {
         int total = 0;
 
         for(int i=0; i<source.length; i++){
-            new_source[i] = new Source(source[i].getID(), source[i].getArrival(), source[i].getService(), source[i].getPriority(), 0);
+            new_source[i] = new Source(source[i].getID(), source[i].getArrival(),
+                    source[i].getService(), source[i].getPriority(), 0, 0);
             total += source[i].getService();
         }
         //도착 시간 정렬
@@ -21,7 +22,7 @@ public class HRN {
 
         for(int i=0; i< new_source.length; i++){
             n_source.add(new Source(new_source[i].getID(), new_source[i].getArrival(), new_source[i].getService(),
-                    new_source[i].getPriority(), 0));
+                    new_source[i].getPriority(), 0, 0));
         }
         System.out.println("HRN Scheduling");
         //---------------간트 차트---------------//
@@ -38,7 +39,7 @@ public class HRN {
                     run++;
                 }
                 sort_source.add(new Source(n_source.get(0).getID(), n_source.get(0).getArrival(), n_source.get(0).getService(),
-                        n_source.get(0).getPriority(), (run-n_source.get(0).getService())));
+                        n_source.get(0).getPriority(), (run-n_source.get(0).getService()), 0));
                 n_source.remove(0);
             }
             else {
@@ -61,7 +62,7 @@ public class HRN {
                     run++;
                 }
                 sort_source.add(new Source(n_source.get(tmp).getID(), n_source.get(tmp).getArrival(), n_source.get(tmp).getService(),
-                        n_source.get(tmp).getPriority(), (run-n_source.get(tmp).getService())));
+                        n_source.get(tmp).getPriority(), (run-n_source.get(tmp).getService()), 0));
                 n_source.remove(tmp);
             }
         }

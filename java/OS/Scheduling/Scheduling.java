@@ -12,12 +12,14 @@ class Source {
     int Action = 1;
     int RunTime;    //실행된 시간
     int Temp = 0;   //프로세스가 도착했는지 확인
-    public Source(String ID, int Arrival, int Service, int Priority, int RunTime){
+    int RT;
+    public Source(String ID, int Arrival, int Service, int Priority, int RunTime, int RT){
         this.ID = ID;
         this.Arrival = Arrival;
         this.Service = Service;
         this.Priority = Priority;
         this.RunTime = RunTime;
+        this.RT = RT;
     };
     public void setTime(int Time){ this.Time = Time; }
     public String getID(){ return ID; }
@@ -49,7 +51,7 @@ public class Scheduling {
             Arrival = Integer.parseInt(arr[1]);
             Service = Integer.parseInt(arr[2]);
             Priority = Integer.parseInt(arr[3]);
-            source[i] = new Source(ID, Arrival, Service, Priority, 0);
+            source[i] = new Source(ID, Arrival, Service, Priority, 0, 0);
         }
 
         Time = Integer.parseInt(scanner.nextLine());
