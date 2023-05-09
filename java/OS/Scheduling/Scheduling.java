@@ -10,7 +10,7 @@ class Source {
     int Priority;
     int Time;
     int Action = 1;
-    int RunTime;
+    int RunTime;    //실행된 시간
     int Temp = 0;   //프로세스가 도착했는지 확인
     public Source(String ID, int Arrival, int Service, int Priority, int RunTime){
         this.ID = ID;
@@ -60,10 +60,10 @@ public class Scheduling {
         //FCFS fcfs = new FCFS(source);
         //SJF sjf = new SJF(source);
         //Non_Priority np = new Non_Priority(source);
-        //Priority pri = new Priority(source);
+        Priority pri = new Priority(source);
         //RR rr = new RR(source);
         //SRT srt = new SRT(source);
-        HRN hrn = new HRN(source);
+        //HRN hrn = new HRN(source);
 
 
     }
