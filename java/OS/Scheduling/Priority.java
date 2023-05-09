@@ -54,8 +54,14 @@ public class Priority {
             }
             System.out.print(box.getID() + " ");
             run++;
+            //실행을 마친 경우
+            if(box.getService() == run-box.getArrival()){
+                sort_source.add(new Source(box.getID(), box.getArrival(), (run-box.getArrival()), box.getPriority(), (run-box.getArrival())));
+                box = new Source(n_source.get(0).getID(), n_source.get(0).getArrival(),
+                        n_source.get(0).getService(), n_source.get(0).getPriority(), 0);
+            }
         }
-        //p3안들어가는 오류 수정해야함.
+
         if(tmp > 1) {
             Arrays.sort(arr_source, 0, tmp, (a, b) -> a.getPriority() - b.getPriority());
         }
@@ -73,7 +79,7 @@ public class Priority {
         }
 
         System.out.println("]");
-
+        //대기시간 부터 시작할 것
         //---------------각 프로세스별 대기 시간---------------//
         System.out.println("각 프로세스별 대기 시간");
         for(int i=0; i<sort_source.size(); i++){
