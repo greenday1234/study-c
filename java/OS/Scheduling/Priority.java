@@ -36,8 +36,10 @@ public class Priority {
         while(run < total){
             if(!n_source.isEmpty() && n_source.get(0).getArrival() == run){
                 //도착한 프로세스의 우선순위가 실행중인 프로세스의 우선순위보다 높은 경우
-                if(n_source.get(0).getPriority() < box.getPriority()){
-                    sort_source.add(new Source(box.getID(), box.getArrival(), (run-box.getArrival()), box.getPriority(), 0, 0));
+                if(n_source.get(0).getPriority() <= box.getPriority()){
+                    box.Service = run-box.getArrival();
+                    box.wait = run;
+                    sort_source.add(box);
                     total -= box.getService() - (run-box.getArrival());
                     arr_source[tmp++] = new Source(box.getID(), box.getArrival(),
                             box.getService()-(run-box.getArrival()), box.getPriority(), 0, -1);
@@ -53,14 +55,21 @@ public class Priority {
                     n_source.remove(0);
                 }
             }
-            run++;
             System.out.print(box.getID() + " ");
-            
-            //실행을 마친 경우
+            run++;
+            //실행중인 프로세스가 끝나는 경우
             if(box.getService() == run-box.getArrival()){
-                sort_source.add(new Source(box.getID(), box.getArrival(), (run-box.getArrival()), box.getPriority(), box.getArrival(), 0));
+                box.Service = run-box.getArrival();
+                box.RunTime = box.getArrival();
+                sort_source.add(box);
                 box = new Source(n_source.get(0).getID(), n_source.get(0).getArrival(),
                         n_source.get(0).getService(), n_source.get(0).getPriority(), 0, 0);
+                n_source.remove(0);
+                if(n_source.isEmpty()){
+                    arr_source[tmp++] = new Source(box.getID(), box.getArrival(),
+                            box.getService()-(run-box.getArrival()), box.getPriority(), run, 0);
+                    total -= box.getService();
+                }
             }
         }
 
@@ -68,15 +77,12 @@ public class Priority {
             Arrays.sort(arr_source, 0, tmp, (a, b) -> a.getPriority() - b.getPriority());
         }
 
-        run--;
         for(int i=0; i<tmp; i++){
-            if(arr_source[i].getService() != 0){
-                sort_source.add(new Source(arr_source[i].getID(), arr_source[i].getArrival(),
+            sort_source.add(new Source(arr_source[i].getID(), run,
                     arr_source[i].getService(), arr_source[i].getPriority(), run, arr_source[i].RT));
             for(int k=0; k<arr_source[i].getService(); k++) {
                 System.out.print(arr_source[i].getID() + " ");
                 run++;
-                }
             }
         }
 
@@ -84,13 +90,20 @@ public class Priority {
 
         //---------------각 프로세스별 대기 시간---------------//
         String str;
+        int wt=0;
         int[] aAWT = new int[source.length];
         System.out.println("각 프로세스별 대기 시간");
         for(int k=0; k< source.length; k++) {
             str = source[k].getID();
             for (int i = 0; i < sort_source.size(); i++) {
                 if (str == sort_source.get(i).getID()) {
-                    aAWT[k] += (sort_source.get(i).RunTime - sort_source.get(i).getArrival());
+                    wt += sort_source.get(i).wait;
+                    if(sort_source.get(i).RT == -1){
+                        aAWT[k] += (sort_source.get(i).RunTime - wt);
+                    }
+                    else{
+                        aAWT[k] = (sort_source.get(i).RunTime - sort_source.get(i).getArrival());
+                    }
                 }
             }
         }

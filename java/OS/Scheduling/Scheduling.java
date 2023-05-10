@@ -13,6 +13,7 @@ class Source {
     int RunTime;    //실행된 시간
     int Temp = 0;   //프로세스가 도착했는지 확인
     int RT;
+    int wait = -1;
     public Source(String ID, int Arrival, int Service, int Priority, int RunTime, int RT){
         this.ID = ID;
         this.Arrival = Arrival;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF42CF102A0BC09400302B88 /* OBJ Viewer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF42CF0F2A0BC09400302B88 /* OBJ Viewer.cpp */; };
 		CFA45F2929CAF99C00B51CED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2829CAF99C00B51CED /* OpenGL.framework */; };
 		CFA45F2B29CAF9B600B51CED /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2A29CAF9B600B51CED /* GLUT.framework */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		CF2802B82A033E9200C3F02E /* Shading.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shading.cpp; sourceTree = "<group>"; };
 		CF321D3D29D03354009DC663 /* turkiye.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = turkiye.cpp; sourceTree = "<group>"; };
 		CF321D4129D04B49009DC663 /* Mouse Star.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Mouse Star.cpp"; sourceTree = "<group>"; };
+		CF42CF0F2A0BC09400302B88 /* OBJ Viewer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; path = "OBJ Viewer.cpp"; sourceTree = "<group>"; };
 		CF4A99A229FA043800698249 /* Planet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Planet.cpp; sourceTree = "<group>"; };
 		CF4A99A429FA047E00698249 /* Pop-up Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Pop-up Menu.cpp"; sourceTree = "<group>"; };
 		CF4A99A629FA04E500698249 /* Pop-up Sub Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Pop-up Sub Menu.cpp"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				CF2802B42A033C3A00C3F02E /* Meterial Property.cpp */,
 				CF2802B62A033E2600C3F02E /* Moving Lighting Example.cpp */,
 				CF2802B82A033E9200C3F02E /* Shading.cpp */,
+				CF42CF0F2A0BC09400302B88 /* OBJ Viewer.cpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF42CF102A0BC09400302B88 /* OBJ Viewer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
