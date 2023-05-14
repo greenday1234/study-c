@@ -1,11 +1,9 @@
 package Scheduling;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
-class Source{
+class Source {
     int Pnum;   //아이디
     int Arrival;    //도착 시간
     int Service;    //실행 시간
@@ -15,17 +13,37 @@ class Source{
     int wait = 0;   //대기 시간
     int RC = 1; //응답 시간
     int tmp = 0;    //응답 시간 체크
+    int RUN = 0;
+    int[] SAVE = new int[8];
     public Source(int Pnum ,int Arrival, int Service, int Priority){
         this.Pnum = Pnum;
         this.Arrival = Arrival;
         this.Service = Service;
         this.Priority = Priority;
+        SAVE[0] = Pnum;
+        SAVE[1] = Arrival;
+        SAVE[2] = Service;
+        SAVE[3] = Priority;
+        SAVE[4] = TQ;
+        SAVE[5] = wait;
+        SAVE[6] = tmp;
+        SAVE[7] = RUN;
     }
     void setTime(int Time){ this.Time = Time; TQ = Time; }
     public int getPnum(){ return Pnum; }
     public int getArrival(){ return Arrival; }
     public int getService(){ return Service; }
     public int getPriority(){ return Priority; }
+    public void Reset(){
+        Pnum = SAVE[0];
+        Arrival = SAVE[1];
+        Service = SAVE[2];
+        Priority = SAVE[3];
+        TQ = SAVE[4];
+        wait = SAVE[5];
+        tmp = SAVE[6];
+        RUN = SAVE[7];
+    }
 }
 
 public class OS {
@@ -58,12 +76,33 @@ public class OS {
         //도착시간 순 정렬
         Arrays.sort(source, (a, b) -> a.getArrival() - b.getArrival());
 
-        //FCFS fcfs = new FCFS(source);
-        //SJF sjf = new SJF(source);
-        //Non_Priority non_priority = new Non_Priority(source);
-        Priority priority = new Priority(source);
-        //RR rr = new RR(source);
-        //SRT str = new SRT(source);
-        //HRN hrn = new HRN(source);
+        FCFS fcfs = new FCFS(source);
+        for(int i=0; i< source.length; i++){
+            source[i].Reset();
+        }
+//        //SJF sjf = new SJF(source);
+//        for(int i=0; i< source.length; i++){
+//            source[i].Reset();
+//        }
+//        //Non_Priority non_priority = new Non_Priority(source);
+//        for(int i=0; i< source.length; i++){
+//            source[i].Reset();
+//        }
+//        //Priority priority = new Priority(source);
+//        for(int i=0; i< source.length; i++){
+//            source[i].Reset();
+//        }
+//        //RR rr = new RR(source);
+//        for(int i=0; i< source.length; i++){
+//            source[i].Reset();
+//        }
+//        //SRT srt = new SRT(source);
+//        for(int i=0; i< source.length; i++){
+//            source[i].Reset();
+//        }
+//        //HRN hrn = new HRN(source);
+//        for(int i=0; i< source.length; i++){
+//            source[i].Reset();
+//        }
     }
 }

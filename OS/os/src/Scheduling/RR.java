@@ -17,7 +17,7 @@ public class RR {
             total += source[i].getService();
         }
 
-        System.out.println("<Round Robin Scheduling>\n");
+        System.out.println("\n<Round Robin Scheduling>\n");
         System.out.println("간트 차트");
         System.out.print("[ ");
         //---------------간트 차트---------------//
