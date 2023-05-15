@@ -76,15 +76,15 @@ public class OS {
         //도착시간 순 정렬
         Arrays.sort(source, (a, b) -> a.getArrival() - b.getArrival());
 
-        FCFS fcfs = new FCFS(source);
-        for(int i=0; i< source.length; i++){
-            source[i].Reset();
-        }
-//        //SJF sjf = new SJF(source);
+//      FCFS fcfs = new FCFS(source);
+//      for(int i=0; i< source.length; i++){
+//          source[i].Reset();
+//      }
+//        SJF sjf = new SJF(source);
 //        for(int i=0; i< source.length; i++){
 //            source[i].Reset();
 //        }
-//        //Non_Priority non_priority = new Non_Priority(source);
+//        Non_Priority non_priority = new Non_Priority(source);
 //        for(int i=0; i< source.length; i++){
 //            source[i].Reset();
 //        }
