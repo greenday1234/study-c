@@ -76,33 +76,33 @@ public class OS {
         //도착시간 순 정렬
         Arrays.sort(source, (a, b) -> a.getArrival() - b.getArrival());
 
-//      FCFS fcfs = new FCFS(source);
-//      for(int i=0; i< source.length; i++){
-//          source[i].Reset();
-//      }
-//        SJF sjf = new SJF(source);
-//        for(int i=0; i< source.length; i++){
-//            source[i].Reset();
-//        }
-//        Non_Priority non_priority = new Non_Priority(source);
-//        for(int i=0; i< source.length; i++){
-//            source[i].Reset();
-//        }
-//        //Priority priority = new Priority(source);
-//        for(int i=0; i< source.length; i++){
-//            source[i].Reset();
-//        }
-//        //RR rr = new RR(source);
-//        for(int i=0; i< source.length; i++){
-//            source[i].Reset();
-//        }
-//        //SRT srt = new SRT(source);
-//        for(int i=0; i< source.length; i++){
-//            source[i].Reset();
-//        }
-//        //HRN hrn = new HRN(source);
-//        for(int i=0; i< source.length; i++){
-//            source[i].Reset();
-//        }
+      FCFS fcfs = new FCFS(source);
+      for(int i=0; i< source.length; i++){
+          source[i].Reset();
+      }
+        SJF sjf = new SJF(source);
+        for(int i=0; i< source.length; i++){
+            source[i].Reset();
+        }
+        Non_Priority non_priority = new Non_Priority(source);
+        for(int i=0; i< source.length; i++){
+            source[i].Reset();
+        }
+        Priority priority = new Priority(source);
+        for(int i=0; i< source.length; i++){
+            source[i].Reset();
+        }
+        RR rr = new RR(source);
+        for(int i=0; i< source.length; i++){
+            source[i].Reset();
+        }
+        SRT srt = new SRT(source);
+        for(int i=0; i< source.length; i++){
+            source[i].Reset();
+        }
+        HRN hrn = new HRN(source);
+        for(int i=0; i< source.length; i++){
+            source[i].Reset();
+        }
     }
 }

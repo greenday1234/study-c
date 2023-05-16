@@ -23,7 +23,6 @@ public class SRT {
         System.out.println("간트 차트");
         System.out.print("[ ");
         //---------------간트 차트---------------//
-        //타임아웃된 프로세스 먼저 시작
         while(run < total) {
             //준비 큐에 넣기
             if(!new_source.isEmpty() &&run == new_source.get(0).getArrival()){

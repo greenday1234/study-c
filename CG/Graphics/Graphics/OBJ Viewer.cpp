@@ -4,12 +4,18 @@
 //
 //  Created by 이찬희 on 2023/05/10.
 //
+
 #define GL_SILENCE_DEPRECATION
 #include <stdio.h>
 #include <stdlib.h>
 #include <GLUT/GLUT.h>
 #include <string.h>
+#include <iostream>
+using namespace std;
 
+GLfloat move_x = 0.0;
+GLfloat move_y = 150.0;
+GLfloat move_z = 300.0;
 typedef struct {
     double** vPoint;
     int** fPoint;
@@ -33,6 +39,9 @@ Model ObjLoad(const char* name) {
     int box = 0;
     int box1 = 0;
     int box2 = 0;
+    int box3 = 0;
+    int box4 = 0;
+    int box5 = 0;
     char c[20];
     int tmp;
     int vCount = 0;
@@ -69,7 +78,7 @@ Model ObjLoad(const char* name) {
         }
         else if (strcmp(c, "f") == 0) {
             if (fCount >= model.fNum) break;
-            fscanf(fp, "%d//%d %d//%d %d//%d", &model.fPoint[fCount][0], &box, &model.fPoint[fCount][1], &box1,  &model.fPoint[fCount][2], &box2);
+            fscanf(fp, "%d/%d/%d %d/%d/%d %d/%d/%d", &model.fPoint[fCount][0], &box, &box3, &model.fPoint[fCount][1], &box1, &box4 ,&model.fPoint[fCount][2], &box2, &box5);
             model.fPoint[fCount][0]--;
             model.fPoint[fCount][1]--;
             model.fPoint[fCount][2]--;
@@ -125,7 +134,7 @@ void display() {
 
     glEnable(GL_CCW);
 
-    gluLookAt(0.0, 1.5, 3.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+    gluLookAt(move_x, move_y, move_z, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 
     glPushMatrix();
 
@@ -138,7 +147,7 @@ void display() {
 }
 
 void init() {
-    global_model1 = ObjLoad("PAN.obj");
+    global_model1 = ObjLoad("hj.obj");
     glClearColor(1.0, 1.0, 1.0, 0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -159,12 +168,51 @@ void reshape(int w, int h) {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
 
-    glFrustum(-100.5, 100.5, -100.5, 100.5, 1.0, 50.0);
+    glFrustum(-100.5, 100.5, -100.5, 100.5, 50.0, 2000.0);
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
     glutPostRedisplay();
+}
+
+void keyboard(unsigned char key, int x, int y)
+{
+    switch (key) {
+        case 'w':
+            move_z -= 10;
+            glutPostRedisplay();
+            cout << "z : "<< move_z << endl;
+            break;
+        case 's':
+            move_z += 10;
+            glutPostRedisplay();
+            cout << "z : "<< move_z << endl;
+            break;
+        case 'a':
+            move_x -= 10;
+            glutPostRedisplay();
+            cout << "x : "<< move_x << endl;
+            break;
+        case 'd':
+            move_x += 10;
+            glutPostRedisplay();
+            cout << "x : "<< move_x << endl;
+            break;
+        case 'k':
+            move_y += 10;
+            glutPostRedisplay();
+            cout << "y : "<< move_y << endl;
+            break;
+        case 'm':
+            move_y -= 10;
+            glutPostRedisplay();
+            cout << "y : "<< move_y << endl;
+            break;
+            
+        default:
+            break;
+    }
 }
 
 int main(int argc, char** argv) {
@@ -178,6 +226,7 @@ int main(int argc, char** argv) {
 
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
+    glutKeyboardFunc(keyboard);
 
     glutMainLoop();
 
