@@ -8,6 +8,10 @@ public class SRT {
         AWT = new int[source.length];
         ATT = new int[source.length];
         ART = new int[source.length];
+
+        for(int i=0; i< source.length; i++) {
+            source[i].TQ = source[i].Time;
+        }
         ArrayList<Source> new_source = new ArrayList<Source>();
         Source box;
         ArrayList<Source> arr_source = new ArrayList<Source>();

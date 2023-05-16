@@ -19,7 +19,7 @@ public class Non_Priority {
             total += source[i].getService();
         }
 
-        System.out.println("\n<SJF Scheduling>\n");
+        System.out.println("\n<Non Preemptive Scheduling>\n");
         System.out.println("간트 차트");
         System.out.print("[ ");
         //---------------간트 차트---------------//

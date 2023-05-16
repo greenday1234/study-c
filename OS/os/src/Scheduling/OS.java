@@ -10,11 +10,9 @@ class Source {
     int Priority;   //우선순위
     int Time;   //타임슬라이스
     int TQ;    //타임슬라이스 체크
-    int wait = 0;   //대기 시간
     int RC = 1; //응답 시간
     int tmp = 0;    //응답 시간 체크
-    int RUN = 0;
-    int[] SAVE = new int[8];
+    int[] SAVE = new int[6];
     public Source(int Pnum ,int Arrival, int Service, int Priority){
         this.Pnum = Pnum;
         this.Arrival = Arrival;
@@ -25,9 +23,7 @@ class Source {
         SAVE[2] = Service;
         SAVE[3] = Priority;
         SAVE[4] = TQ;
-        SAVE[5] = wait;
-        SAVE[6] = tmp;
-        SAVE[7] = RUN;
+        SAVE[5] = tmp;
     }
     void setTime(int Time){ this.Time = Time; TQ = Time; }
     public int getPnum(){ return Pnum; }
@@ -40,9 +36,7 @@ class Source {
         Service = SAVE[2];
         Priority = SAVE[3];
         TQ = SAVE[4];
-        wait = SAVE[5];
-        tmp = SAVE[6];
-        RUN = SAVE[7];
+        tmp = SAVE[5];
     }
 }
 
@@ -80,29 +74,32 @@ public class OS {
       for(int i=0; i< source.length; i++){
           source[i].Reset();
       }
+
         SJF sjf = new SJF(source);
         for(int i=0; i< source.length; i++){
             source[i].Reset();
         }
+
         Non_Priority non_priority = new Non_Priority(source);
         for(int i=0; i< source.length; i++){
             source[i].Reset();
         }
+
         Priority priority = new Priority(source);
         for(int i=0; i< source.length; i++){
             source[i].Reset();
         }
+
         RR rr = new RR(source);
         for(int i=0; i< source.length; i++){
             source[i].Reset();
         }
+
         SRT srt = new SRT(source);
         for(int i=0; i< source.length; i++){
             source[i].Reset();
         }
+
         HRN hrn = new HRN(source);
-        for(int i=0; i< source.length; i++){
-            source[i].Reset();
-        }
     }
 }
