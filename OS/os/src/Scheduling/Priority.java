@@ -80,6 +80,8 @@ public class Priority {
                 //준비 큐에 프로세스가 없는 경우
                 else{
                     System.out.print("- ");
+                    run++;
+                    total++;
                 }
             }
 

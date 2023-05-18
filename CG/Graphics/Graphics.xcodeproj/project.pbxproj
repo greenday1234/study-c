@@ -36,7 +36,6 @@
 		CF35CD8F2A147150005DE783 /* lodepng.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lodepng.cpp; sourceTree = "<group>"; };
 		CF35CD912A1471E6005DE783 /* lodepng.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lodepng.h; sourceTree = "<group>"; };
 		CF35CD922A147203005DE783 /* lode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lode.cpp; sourceTree = "<group>"; };
-		CF35CD932A147203005DE783 /* lode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = lode.hpp; sourceTree = "<group>"; };
 		CF42CF0F2A0BC09400302B88 /* OBJ Viewer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; path = "OBJ Viewer.cpp"; sourceTree = "<group>"; };
 		CF4A99A229FA043800698249 /* Planet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Planet.cpp; sourceTree = "<group>"; };
 		CF4A99A429FA047E00698249 /* Pop-up Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Pop-up Menu.cpp"; sourceTree = "<group>"; };
@@ -131,7 +130,6 @@
 				CF35CD8F2A147150005DE783 /* lodepng.cpp */,
 				CF35CD912A1471E6005DE783 /* lodepng.h */,
 				CF35CD922A147203005DE783 /* lode.cpp */,
-				CF35CD932A147203005DE783 /* lode.hpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";

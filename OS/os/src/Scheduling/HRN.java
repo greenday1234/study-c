@@ -36,7 +36,6 @@ public class HRN {
                 box = arr_source.get(0);
                 System.out.print("P" + box.getPnum() + " ");
                 run++;
-                box.TQ--;
                 box.Service--;
                 count++;
                 //실행이 끝난 경우
@@ -60,6 +59,8 @@ public class HRN {
             }
             else{
                 System.out.print("- ");
+                run++;
+                total++;
             }
         }
         System.out.println("]\n");

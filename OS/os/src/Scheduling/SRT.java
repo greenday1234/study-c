@@ -58,7 +58,6 @@ public class SRT {
                     }
                     //반환 시간
                     ATT[box.getPnum()] += run-count - box.getArrival() + count;
-
                     arr_source.remove(0);
                     count = 0;
                     tmp = 0;
@@ -75,7 +74,6 @@ public class SRT {
                     }
                     //반환 시간
                     ATT[box.getPnum()] += run - box.getArrival();
-
                     arr_source.remove(0);
                     box.TQ = box.Time;
                     box.Arrival = run;
@@ -87,6 +85,8 @@ public class SRT {
             }
             else{
                 System.out.print("- ");
+                run++;
+                total++;
             }
         }
         System.out.println("]\n");

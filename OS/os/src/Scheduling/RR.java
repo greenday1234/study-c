@@ -72,6 +72,8 @@ public class RR {
             }
             else{
                 System.out.print("- ");
+                run++;
+                total++;
             }
         }
         System.out.println("]\n");

@@ -35,7 +35,6 @@ public class Non_Priority {
 
                 System.out.print("P" + box.getPnum() + " ");
                 run++;
-                box.TQ--;
                 box.Service--;
                 count++;
                 //실행이 끝난 경우
@@ -56,6 +55,8 @@ public class Non_Priority {
             }
             else{
                 System.out.print("- ");
+                run++;
+                total++;
             }
         }
         System.out.println("]\n");
