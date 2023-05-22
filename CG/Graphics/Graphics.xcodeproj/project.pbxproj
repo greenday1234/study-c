@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF62AAE32A1792BB00FF0EDF /* Solar System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF62AAE22A1792BB00FF0EDF /* Solar System.cpp */; };
+		CF7643872A1B06D3002CB367 /* Solar System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF62AAE22A1792BB00FF0EDF /* Solar System.cpp */; };
 		CFA45F2929CAF99C00B51CED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2829CAF99C00B51CED /* OpenGL.framework */; };
 		CFA45F2B29CAF9B600B51CED /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2A29CAF9B600B51CED /* GLUT.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +43,7 @@
 		CF4A99AA29FA05D800698249 /* Planet + Pop up.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Planet + Pop up.cpp"; sourceTree = "<group>"; };
 		CF62AAE22A1792BB00FF0EDF /* Solar System.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Solar System.cpp"; sourceTree = "<group>"; };
 		CF6EA22D29D95EB1006D2A53 /* Korea.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Korea.cpp; sourceTree = "<group>"; };
+		CF7643832A1B0065002CB367 /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		CFA45F1D29CAF68200B51CED /* Graphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Graphics; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFA45F2829CAF99C00B51CED /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		CFA45F2A29CAF9B600B51CED /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -131,6 +132,7 @@
 				CF35CD912A1471E6005DE783 /* lodepng.h */,
 				CF35CD922A147203005DE783 /* lode.cpp */,
 				CF62AAE22A1792BB00FF0EDF /* Solar System.cpp */,
+				CF7643832A1B0065002CB367 /* test.cpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -201,7 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF62AAE32A1792BB00FF0EDF /* Solar System.cpp in Sources */,
+				CF7643872A1B06D3002CB367 /* Solar System.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 #define GL_SILENCE_DEPRECATION
 #include <GLUT/glut.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 float MercuryYear = 0;
 float MercuryDay = 0;
@@ -26,6 +27,9 @@ float UranusYear = 0;
 float UranusDay = 0;
 float NeptuneYear = 0;
 float NeptuneDay = 0;
+
+float zoom = 1.0f;
+float move = 0.1f;
 
 void idleProcess() {
     MercuryYear += 4.0;
@@ -104,9 +108,11 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glEnable(GL_DEPTH_TEST);
-    glLoadIdentity();    //행렬 초기화
-
+    glMatrixMode(GL_MODELVIEW); // 모델뷰 행렬 모드로 전환
+    glLoadIdentity();           // 모델뷰 행렬 초기화
+    
     gluLookAt(0.1,0.1,0.1,0.1,0.0,0.0,1.0,1.5,0.0);
+    glScalef(zoom, zoom, zoom); //zoom in, zoom out
 
     //태양
     glColor3f(1.0, 0.0, 0.0);
@@ -208,7 +214,32 @@ void reshape(int w, int h) {
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();    //행렬 초기화
-    gluPerspective(360.0, (GLfloat)w / (GLfloat)h, 1.0, 20.0);
+    gluPerspective(360.0, (GLfloat)w / (GLfloat)h, 0.1, 20.0);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+}
+
+void Specialkeyboard(int key, int x, int y)
+{
+    switch(key) {
+        //left
+        case GLUT_KEY_LEFT:
+            move -= 0.1;
+            break;
+        //right
+        case GLUT_KEY_RIGHT:
+            move += 0.1;
+            break;
+        //up
+        case GLUT_KEY_UP:
+            zoom *= 1.1f;
+            break;
+        //down
+        case GLUT_KEY_DOWN:
+            zoom /= 1.1f;
+            break;
+    }
+    glutPostRedisplay();
 }
 
 int main(int argc, char** argv) {
@@ -218,9 +249,11 @@ int main(int argc, char** argv) {
     glutInitWindowPosition(100, 100);
     glutCreateWindow("Solar System");
     init();
-    glutDisplayFunc(display);
     glutReshapeFunc(reshape);
+    glutDisplayFunc(display);
+   
     glutIdleFunc(idleProcess);
+    glutSpecialFunc(Specialkeyboard);
     glutMainLoop();
     return 0;
 }
