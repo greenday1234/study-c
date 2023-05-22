@@ -8,6 +8,7 @@
 #include <GLUT/glut.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 float MercuryYear = 0;
 float MercuryDay = 0;
@@ -28,8 +29,21 @@ float UranusDay = 0;
 float NeptuneYear = 0;
 float NeptuneDay = 0;
 
-float zoom = 1.0f;
-float move = 0.1f;
+float zoom = 1.0f;  //줌인/줌아웃 변수
+float cameraRotation = 0.0f;    //카메라 회전 변수
+float RotateX = 1.0;
+float RotateY = 1.0;
+float RotateZ = 1.0;
+
+GLdouble eyeX = 0.1;
+GLdouble eyeY = 0.1;
+GLdouble eyeZ = 0.1;
+GLdouble centerX = 0.1;
+GLdouble centerY = 0.0;
+GLdouble centerZ = 0.0;
+GLdouble upX = 1.0;
+GLdouble upY = 1.5;
+GLdouble upZ = 0.0;
 
 void idleProcess() {
     MercuryYear += 4.0;
@@ -111,13 +125,15 @@ void display() {
     glMatrixMode(GL_MODELVIEW); // 모델뷰 행렬 모드로 전환
     glLoadIdentity();           // 모델뷰 행렬 초기화
     
-    gluLookAt(0.1,0.1,0.1,0.1,0.0,0.0,1.0,1.5,0.0);
+    gluLookAt(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ); //기본
+
     glScalef(zoom, zoom, zoom); //zoom in, zoom out
+    
+    glRotatef(cameraRotation, RotateX, RotateY, RotateZ); // 씬 전체를 회전시킴
 
     //태양
     glColor3f(1.0, 0.0, 0.0);
     glutWireSphere(0.1, 20, 15);
-    glEnd();
           
     //수성
     glPushMatrix();
@@ -126,7 +142,6 @@ void display() {
     glTranslatef(0.2, 0.0, 0.0);
     glRotatef(MercuryDay, 0.0, 1.0, 0.0);
     glutWireSphere(0.01, 20, 15);
-    glEnd();
     glPopMatrix();
     
     //금성
@@ -136,7 +151,6 @@ void display() {
     glTranslatef(0.3, 0.0, 0.0);
     glRotatef(VenusDay, 0.0, 1.0, 0.0);
     glutWireSphere(0.025, 20, 15);
-    glEnd();
     glPopMatrix();
     
     //지구
@@ -146,15 +160,15 @@ void display() {
     glTranslatef(0.4, 0.0, 0.0);
     glRotatef(EarthDay, 0.0, 1.0, 0.0);
     glutWireSphere(0.025, 20, 15);
-    glEnd();
     
     //달
+    glPushMatrix();
     glColor3f(0.7, 0.7, 0.7);
     glRotatef(MoonYear, 0.0, 1.0, 0.0);
     glTranslatef(0.05, 0.0, 0.0);
     glRotatef(MoonDay, 0.0, 1.0, 0.0);
     glutWireSphere(0.006, 20, 15);
-    glEnd();
+    glPopMatrix();
     glPopMatrix();
     
     //화성
@@ -164,7 +178,6 @@ void display() {
     glTranslatef(0.6, 0.0, 0.0);
     glRotatef(MarsDay, 0.0, 1.0, 0.0);
     glutWireSphere(0.0125, 20, 15);
-    glEnd();
     glPopMatrix();
 
     //목성
@@ -174,7 +187,6 @@ void display() {
     glTranslatef(0.7, 0.0, 0.0);
     glRotatef(JupiterDay, 0.0, 1.0, 0.0);
     glutWireSphere(0.05, 20, 15);
-    glEnd();
     glPopMatrix();
 
     //토성
@@ -184,7 +196,6 @@ void display() {
     glTranslatef(0.8, 0.0, 0.0);
     glRotatef(SaturnDay, 0.0, 1.0, 0.0);
     glutWireSphere(0.04, 20, 15);
-    glEnd();
     glPopMatrix();
 
     //천왕성
@@ -194,7 +205,6 @@ void display() {
     glTranslatef(0.9, 0.0, 0.0);
     glRotatef(UranusDay, 0.0, 1.0, 0.0);
     glutWireSphere(0.03, 20, 15);
-    glEnd();
     glPopMatrix();
     
     //해왕성
@@ -204,17 +214,15 @@ void display() {
     glTranslatef(1.0, 0.0, 0.0);
     glRotatef(NeptuneDay, 0.0, 1.0, 0.0);
     glutWireSphere(0.035, 20, 15);
-    glEnd();
     glPopMatrix();
     
-    glFlush();
+    glutSwapBuffers();
 }
 
 void reshape(int w, int h) {
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();    //행렬 초기화
-    gluPerspective(360.0, (GLfloat)w / (GLfloat)h, 0.1, 20.0);
+    gluPerspective(60.0, (GLfloat)w / (GLfloat)h, 0.000001, -1000.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
@@ -224,11 +232,11 @@ void Specialkeyboard(int key, int x, int y)
     switch(key) {
         //left
         case GLUT_KEY_LEFT:
-            move -= 0.1;
+            cameraRotation -= 5.0f;
             break;
         //right
         case GLUT_KEY_RIGHT:
-            move += 0.1;
+            cameraRotation += 5.0f;
             break;
         //up
         case GLUT_KEY_UP:
@@ -242,13 +250,75 @@ void Specialkeyboard(int key, int x, int y)
     glutPostRedisplay();
 }
 
+void popupMenu(int value) {
+    switch (value) {
+    //기본 시점
+    case 1:
+        zoom = 1;
+        cameraRotation = 0.0f;
+            eyeX = 0.1;
+            eyeY = 0.1;
+            eyeZ = 0.1;
+            centerX = 0.1;
+            centerY = 0.0;
+            centerZ = 0.0;
+            upX = 1.0;
+            upY = 1.5;
+            upZ = 0.0;
+            RotateX = 1.0;
+            RotateY = 1.0;
+            RotateZ = 1.0;
+        break;
+    //위 시점
+    case 2:
+        zoom = 1;
+        cameraRotation  = 0.0f;
+        eyeX = 0.0;
+        eyeY = 1.0;
+        eyeZ = 0.0;
+        centerX = 0.0;
+        centerY = 0.0;
+        centerZ = 0.0;
+        upX = 0.0;
+        upY = 0.0;
+        upZ = -1.0;
+        RotateX = 1.0;
+        RotateY = 0.0;
+        RotateZ = 0.0;
+        break;
+    //옆 시점
+    case 3:
+        glutSetWindowTitle("third Menu");
+        printf("select third menu.\n");
+        break;
+    //앞 시점
+    case 4:
+        printf("OpenGl Program exit.\n");
+        break;
+    //무작위 시점
+    case 5:
+        printf("dd");
+        break;
+    }
+    glutPostRedisplay();
+}
+
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(800, 800);
     glutInitWindowPosition(100, 100);
     glutCreateWindow("Solar System");
     init();
+    
+    glutCreateMenu(popupMenu);
+    glutAddMenuEntry("기본 시점", 1);
+    glutAddMenuEntry("위 시점", 2);
+    glutAddMenuEntry("옆 시점", 3);
+    glutAddMenuEntry("앞 시점", 4);
+    glutAddMenuEntry("무작위 시점", 5);
+    glutAttachMenu(GLUT_RIGHT_BUTTON);
+    
     glutReshapeFunc(reshape);
     glutDisplayFunc(display);
    
