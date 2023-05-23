@@ -180,7 +180,6 @@ void display() {
     
     //달
     glPushName(5);
-    glPushMatrix();
     glColor3f(Moonr, MoonG, MoonB);
     glRotatef(MoonYear, 0.0, 1.0, 0.0);
     glTranslatef(0.05, 0.0, 0.0);
@@ -188,7 +187,7 @@ void display() {
     glutWireSphere(0.006, 20, 15);
     glPopMatrix();
     glPopName();
-    glPopMatrix();
+
     
     //화성
     glPushName(6);
@@ -262,9 +261,9 @@ void ProcessSelect(GLuint index[64]){
             MercuryB = randomDouble();
             break;
         case 3:
-            Marsr = randomDouble();
-            MarsG = randomDouble();
-            MarsB = randomDouble();
+            Venusr = randomDouble();
+            VenusG = randomDouble();
+            VenusB = randomDouble();
             break;
         case 4:
             Earthr = randomDouble();
@@ -277,9 +276,9 @@ void ProcessSelect(GLuint index[64]){
             MoonB = randomDouble();
             break;
         case 6:
-            Venusr = randomDouble();
-            VenusG = randomDouble();
-            VenusB = randomDouble();
+            Marsr = randomDouble();
+            MarsG = randomDouble();
+            MarsB = randomDouble();
             break;
         case 7:
             Jupiterr = randomDouble();
@@ -360,15 +359,68 @@ void keyboard(unsigned char key, int x, int y) {
         break;
     //-key
     case '-':
-            MercuryR -= 0.2;
-            VenusR -= 0.2;
-            EarthR -= 0.2;
-            MoonR -= 0.2;
-            MarsR -= 0.2;
-            JupiterR -= 0.2;
-            SaturnR -= 0.2;
-            UranusR -= 0.2;
-            NeptuneR -= 0.2;
+            if(MercuryR <= 0.0){
+                MercuryR = 0.0;
+            }
+            else{
+                MercuryR -= 0.2;
+            }
+            
+            if(VenusR <= 0.0){
+                VenusR = 0.0;
+            }
+            else{
+                VenusR -= 0.2;
+            }
+            
+            if(EarthR <= 0.0){
+                EarthR = 0.0;
+            }
+            else{
+                EarthR -= 0.2;
+            }
+
+            if(MoonR <= 0.0){
+                MoonR = 0.0;
+            }
+            else{
+                MoonR -= 0.2;
+            }
+            
+            if(MarsR <= 0.0){
+                MarsR = 0.0;
+            }
+            else{
+                MarsR -= 0.2;
+            }
+            
+            if(JupiterR <= 0.0){
+                JupiterR = 0.0;
+            }
+            else{
+                JupiterR -= 0.2;
+            }
+            
+            if(SaturnR <= 0.0){
+                SaturnR = 0.0;
+            }
+            else{
+                SaturnR -= 0.2;
+            }
+            
+            if(UranusR <= 0.0){
+                UranusR = 0.0;
+            }
+            else{
+                UranusR -= 0.2;
+            }
+            
+            if(NeptuneR <= 0.0){
+                NeptuneR = 0.0;
+            }
+            else{
+                NeptuneR -= 0.2;
+            }
         break;
     //space bar
     case ' ':
