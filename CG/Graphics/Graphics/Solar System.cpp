@@ -25,7 +25,7 @@ float NeptuneYear = 0; float NeptuneDay = 0;
 
 float zoom = 1.0f;  //줌인/줌아웃 변수
 float cameraRotation = 0.0f;    //카메라 회전 변수
-float RotateX = 1.0; float RotateY = 1.0; float RotateZ = 1.0;  //회전 축 변수
+float RotateX = 0.0; float RotateY = 1.0; float RotateZ = -1.0;  //회전 축 변수
 
 //시점 변수
 GLdouble eyeX = 0.1; GLdouble eyeY = 0.1; GLdouble eyeZ = 0.1;
@@ -359,67 +359,49 @@ void keyboard(unsigned char key, int x, int y) {
         break;
     //-key
     case '-':
+            MercuryR -= 0.2;
             if(MercuryR <= 0.0){
                 MercuryR = 0.0;
             }
-            else{
-                MercuryR -= 0.2;
-            }
             
+            VenusR -= 0.2;
             if(VenusR <= 0.0){
                 VenusR = 0.0;
             }
-            else{
-                VenusR -= 0.2;
-            }
-            
+        
+            EarthR -= 0.2;
             if(EarthR <= 0.0){
                 EarthR = 0.0;
             }
-            else{
-                EarthR -= 0.2;
-            }
 
+            MoonR -= 5.0;
             if(MoonR <= 0.0){
                 MoonR = 0.0;
             }
-            else{
-                MoonR -= 0.2;
-            }
             
+            MarsR -= 0.2;
             if(MarsR <= 0.0){
                 MarsR = 0.0;
             }
-            else{
-                MarsR -= 0.2;
-            }
             
+            JupiterR -= 0.2;
             if(JupiterR <= 0.0){
                 JupiterR = 0.0;
             }
-            else{
-                JupiterR -= 0.2;
-            }
-            
+    
+            SaturnR -= 0.2;
             if(SaturnR <= 0.0){
                 SaturnR = 0.0;
             }
-            else{
-                SaturnR -= 0.2;
-            }
             
+            UranusR -= 0.2;
             if(UranusR <= 0.0){
                 UranusR = 0.0;
             }
-            else{
-                UranusR -= 0.2;
-            }
             
+            NeptuneR -= 0.2;
             if(NeptuneR <= 0.0){
                 NeptuneR = 0.0;
-            }
-            else{
-                NeptuneR -= 0.2;
             }
         break;
     //space bar
@@ -476,9 +458,9 @@ void popupMenu(int value) {
         upX = 1.0;
         upY = 1.5;
         upZ = 0.0;
-        RotateX = 1.0;
+        RotateX = 0.0;
         RotateY = 1.0;
-        RotateZ = 1.0;
+        RotateZ = -1.0;
         break;
     //위 시점
     case 2:
