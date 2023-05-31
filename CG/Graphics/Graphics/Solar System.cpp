@@ -303,11 +303,10 @@ void ProcessSelect(GLuint index[64]){
     }
 }
 
-
 //객체 선택 함수
 void SelectObjects(GLint x, GLint y)
 {
-    GLuint selectBuff[64];
+    GLuint selectBuff[10];  //객체가 10개이므로 버퍼의 크기를 10으로 정한다.
     GLint hits, viewport[4];
    
     glSelectBuffer(64, selectBuff);
