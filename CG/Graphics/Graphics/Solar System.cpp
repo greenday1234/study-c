@@ -13,6 +13,7 @@
 GLfloat ratio;  //viewport 변수
 int count = 0;  //space bar 변수
 
+//공전변수 자전변수
 float MercuryYear = 0; float MercuryDay = 0;
 float VenusYear = 0; float VenusDay = 0;
 float EarthYear = 0; float EarthDay = 0;
@@ -117,10 +118,6 @@ void init() {
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_SMOOTH);
     glClearDepth(1.0f);
-    glEnable(GL_COLOR_MATERIAL);
-    glEnable(GL_LIGHT0);
-    glDepthFunc(GL_LEQUAL);
-    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 }
 
 void display() {
