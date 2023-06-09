@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF7643872A1B06D3002CB367 /* Solar System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF62AAE22A1792BB00FF0EDF /* Solar System.cpp */; };
 		CFA45F2929CAF99C00B51CED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2829CAF99C00B51CED /* OpenGL.framework */; };
 		CFA45F2B29CAF9B600B51CED /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA45F2A29CAF9B600B51CED /* GLUT.framework */; };
+		CFC8CC982A335503002740B0 /* Solar System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF62AAE22A1792BB00FF0EDF /* Solar System.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +35,7 @@
 		CF35CD8F2A147150005DE783 /* lodepng.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lodepng.cpp; sourceTree = "<group>"; };
 		CF35CD912A1471E6005DE783 /* lodepng.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lodepng.h; sourceTree = "<group>"; };
 		CF35CD922A147203005DE783 /* lode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lode.cpp; sourceTree = "<group>"; };
+		CF395A4A2A31BADA007942D4 /* Quadric Example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Quadric Example.cpp"; sourceTree = "<group>"; };
 		CF42CF0F2A0BC09400302B88 /* OBJ Viewer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; path = "OBJ Viewer.cpp"; sourceTree = "<group>"; };
 		CF4A99A229FA043800698249 /* Planet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Planet.cpp; sourceTree = "<group>"; };
 		CF4A99A429FA047E00698249 /* Pop-up Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Pop-up Menu.cpp"; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 				CF35CD922A147203005DE783 /* lode.cpp */,
 				CF62AAE22A1792BB00FF0EDF /* Solar System.cpp */,
 				CF7643832A1B0065002CB367 /* test.cpp */,
+				CF395A4A2A31BADA007942D4 /* Quadric Example.cpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -203,7 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF7643872A1B06D3002CB367 /* Solar System.cpp in Sources */,
+				CFC8CC982A335503002740B0 /* Solar System.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
